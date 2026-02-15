@@ -41,7 +41,7 @@ const Solutions = () => {
             color: "cyan",
             gradient: "from-cyan-500 to-blue-600",
             visualIcon: <Globe size={48} />,
-            image: "src/assets/enterprise_solution_tech_1771190922855.png"
+            image: "/assets/enterprise_solution_tech_1771190922855.png"
         },
         {
             id: 'education',
@@ -49,7 +49,7 @@ const Solutions = () => {
             color: "blue",
             gradient: "from-blue-500 to-purple-600",
             visualIcon: <Target size={48} />,
-            image: "src/assets/education_solution_tech_1771190940237.png"
+            image: "/assets/education_solution_tech_1771190940237.png"
         },
         {
             id: 'healthcare',
@@ -57,7 +57,7 @@ const Solutions = () => {
             color: "purple",
             gradient: "from-purple-500 to-pink-600",
             visualIcon: <Activity size={48} />,
-            image: "src/assets/healthcare_solution_tech_1771190959453.png"
+            image: "/assets/healthcare_solution_tech_1771190959453.png"
         },
         {
             id: 'retail',
@@ -65,7 +65,7 @@ const Solutions = () => {
             color: "emerald",
             gradient: "from-emerald-500 to-teal-600",
             visualIcon: <BarChart3 size={48} />,
-            image: "src/assets/retail_solution_tech_v2_1771190981713.png"
+            image: "/assets/retail_solution_tech_v2_1771190981713.png"
         },
         {
             id: 'finance',
@@ -73,7 +73,7 @@ const Solutions = () => {
             color: "orange",
             gradient: "from-orange-500 to-red-600",
             visualIcon: <Shield size={48} />,
-            image: "src/assets/finance_solution_tech_v2_1771190997106.png"
+            image: "/assets/finance_solution_tech_v2_1771190997106.png"
         },
         {
             id: 'manufacturing',
@@ -81,7 +81,7 @@ const Solutions = () => {
             color: "indigo",
             gradient: "from-indigo-500 to-purple-600",
             visualIcon: <Cpu size={48} />,
-            image: "src/assets/manufacturing_solution_tech_v2_1771191019354.png"
+            image: "/assets/manufacturing_solution_tech_v2_1771191019354.png"
         }
     ];
 
