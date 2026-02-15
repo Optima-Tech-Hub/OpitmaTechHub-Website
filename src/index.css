@@ -10,6 +10,25 @@ body {
   overflow-x: hidden;
 }
 
+/* Hide scrollbars globally while maintaining scroll functionality */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+}
+
 #root {
   min-height: 100vh;
   width: 100%;

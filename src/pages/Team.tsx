@@ -125,11 +125,11 @@ const Team = () => {
                             >
                                 <div className="glass-effect rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all">
                                     {/* Color bar */}
-                                    <div className={`h-2 bg-gradient-to-r ${founder.color}`} />
+                                    <div className={`h-2 bg-linear-to-r ${founder.color}`} />
 
                                     {/* Avatar */}
                                     <div className="p-8">
-                                        <div className={`w-24 h-24 rounded-full bg-gradient-to-r ${founder.color} mb-6 flex items-center justify-center text-3xl font-bold text-white shadow-lg group-hover:scale-110 transition-transform mx-auto`}>
+                                        <div className={`w-24 h-24 rounded-full bg-linear-to-r ${founder.color} mb-6 flex items-center justify-center text-3xl font-bold text-white shadow-lg group-hover:scale-110 transition-transform mx-auto`}>
                                             {founder.avatar}
                                         </div>
 
@@ -204,7 +204,7 @@ const Team = () => {
                                 className="glass-effect p-6 rounded-xl group cursor-pointer"
                             >
                                 <div className="flex items-center gap-4">
-                                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center text-xl font-bold text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                                    <div className="w-16 h-16 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 flex items-center justify-center text-xl font-bold text-white shrink-0 group-hover:scale-110 transition-transform">
                                         {member.avatar}
                                     </div>
                                     <div>
@@ -222,7 +222,7 @@ const Team = () => {
             </section>
 
             {/* Join Us CTA */}
-            <section className="py-20 bg-gradient-to-r from-cyan-500 to-blue-600">
+            <section className="py-20 bg-linear-to-r from-cyan-500 to-blue-600">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                         Want to Join Our Team?

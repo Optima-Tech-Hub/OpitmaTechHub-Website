@@ -1,6 +1,5 @@
 import React from "react";
-
-const USER_LOGO_URL = "OTH.png";
+import logo from "../assets/OTH.png"; // adjust path if needed
 
 interface LogoProps {
   className?: string;
@@ -8,7 +7,7 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className = "" }) => (
   <img
-    src={USER_LOGO_URL}
+    src={logo}
     alt="Optima Tech Hub"
     className={`${className} object-contain`}
   />

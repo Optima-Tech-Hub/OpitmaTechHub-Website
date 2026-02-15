@@ -133,7 +133,7 @@ const CaseStudies = () => {
                                 className="glass-effect rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group"
                             >
                                 {/* Header with gradient */}
-                                <div className={`h-2 bg-gradient-to-r ${study.color}`} />
+                                <div className={`h-2 bg-linear-to-r ${study.color}`} />
 
                                 <div className="p-8">
                                     {/* Industry tag */}
@@ -168,7 +168,7 @@ const CaseStudies = () => {
                                         <ul className="space-y-2">
                                             {study.results.map((result, idx) => (
                                                 <li key={idx} className="text-slate-400 text-sm flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 flex-shrink-0" />
+                                                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 shrink-0" />
                                                     {result}
                                                 </li>
                                             ))}
@@ -229,7 +229,7 @@ const CaseStudies = () => {
             </section>
 
             {/* CTA */}
-            <section className="py-20 bg-gradient-to-r from-cyan-500 to-blue-600">
+            <section className="py-20 bg-linear-to-r from-cyan-500 to-blue-600">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                         Ready to Become Our Next Success Story?

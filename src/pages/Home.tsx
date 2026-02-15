@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import {
     ArrowRight,
     Cpu,
@@ -16,6 +17,49 @@ import Logo from '../components/Logo';
 import SectionHeader from '../components/SectionHeader';
 
 const Home = () => {
+    const { t } = useTranslation();
+
+    const services = [
+        {
+            icon: <Layout size={40} className="text-cyan-400" />,
+            title: t('home.services.items.platform.title'),
+            desc: t('home.services.items.platform.desc'),
+            link: "/services#platform"
+        },
+        {
+            icon: <Cpu size={40} className="text-blue-500" />,
+            title: t('home.services.items.ai.title'),
+            desc: t('home.services.items.ai.desc'),
+            link: "/services#ai"
+        },
+        {
+            icon: <Cloud size={40} className="text-purple-500" />,
+            title: t('home.services.items.cloud.title'),
+            desc: t('home.services.items.cloud.desc'),
+            link: "/services#cloud"
+        },
+        {
+            icon: <Settings size={40} className="text-emerald-400" />,
+            title: t('home.services.items.maintenance.title'),
+            desc: t('home.services.items.maintenance.desc'),
+            link: "/services#maintenance"
+        }
+    ];
+
+    const features = [
+        { icon: <Shield />, title: t('home.whyChooseUs.features.inHouse.title'), desc: t('home.whyChooseUs.features.inHouse.desc') },
+        { icon: <Zap />, title: t('home.whyChooseUs.features.fast.title'), desc: t('home.whyChooseUs.features.fast.desc') },
+        { icon: <Code />, title: t('home.whyChooseUs.features.custom.title'), desc: t('home.whyChooseUs.features.custom.desc') },
+        { icon: <Users />, title: t('home.whyChooseUs.features.communication.title'), desc: t('home.whyChooseUs.features.communication.desc') },
+        { icon: <TrendingUp />, title: t('home.whyChooseUs.features.partnership.title'), desc: t('home.whyChooseUs.features.partnership.desc') },
+    ];
+
+    const stats = [
+        { number: '50+', label: t('home.hero.stats.projects') },
+        { number: '98%', label: t('home.hero.stats.satisfaction') },
+        { number: '24/7', label: t('home.hero.stats.support') },
+    ];
+
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
@@ -50,10 +94,8 @@ const Home = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
                         className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 max-w-5xl"
+                        dangerouslySetInnerHTML={{ __html: t('home.hero.title') }}
                     >
-                        Building <span className="text-gradient">Intelligent</span>
-                        <br />
-                        Digital Platforms
                     </motion.h1>
 
                     <motion.p
@@ -62,7 +104,7 @@ const Home = () => {
                         transition={{ delay: 0.4, duration: 0.8 }}
                         className="text-lg md:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed"
                     >
-                        Optima Tech Hub helps institutions transform operations through powerful software solutions integrated with artificial intelligence.
+                        {t('home.hero.description')}
                     </motion.p>
 
                     <motion.div
@@ -75,14 +117,14 @@ const Home = () => {
                             to="/contact"
                             className="group px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold rounded-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20"
                         >
-                            Start Transformation
+                            {t('home.hero.startTransformation')}
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <Link
                             to="/about"
                             className="px-8 py-4 glass-effect hover:bg-slate-800 text-white font-medium rounded-lg transition-all flex items-center justify-center"
                         >
-                            Learn More
+                            {t('home.hero.learnMore')}
                         </Link>
                     </motion.div>
 
@@ -93,11 +135,7 @@ const Home = () => {
                         transition={{ delay: 0.8, duration: 0.8 }}
                         className="grid grid-cols-3 gap-8 mt-20 max-w-3xl w-full"
                     >
-                        {[
-                            { number: '50+', label: 'Projects Delivered' },
-                            { number: '98%', label: 'Client Satisfaction' },
-                            { number: '24/7', label: 'Support Available' },
-                        ].map((stat, idx) => (
+                        {stats.map((stat, idx) => (
                             <div key={idx} className="text-center">
                                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">{stat.number}</div>
                                 <div className="text-sm text-slate-500">{stat.label}</div>
@@ -115,37 +153,12 @@ const Home = () => {
                 <div className="absolute inset-0 bg-grid-pattern opacity-10" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                     <SectionHeader
-                        title="What We Do"
-                        subtitle="Comprehensive digital solutions engineered for impact"
+                        title={t('home.services.title')}
+                        subtitle={t('home.services.subtitle')}
                     />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {[
-                            {
-                                icon: <Layout size={40} className="text-cyan-400" />,
-                                title: "Digital Platform Dev",
-                                desc: "Web & internal systems, custom dashboards, portals, and scalable backend architectures.",
-                                link: "/services#platform"
-                            },
-                            {
-                                icon: <Cpu size={40} className="text-blue-500" />,
-                                title: "AI Integration",
-                                desc: "Intelligent automation, data-driven decision systems, and AI-powered workflows.",
-                                link: "/services#ai"
-                            },
-                            {
-                                icon: <Cloud size={40} className="text-purple-500" />,
-                                title: "Cloud & Infrastructure",
-                                desc: "Hosting, deployment, DevOps pipelines, and continuous performance optimization.",
-                                link: "/services#cloud"
-                            },
-                            {
-                                icon: <Settings size={40} className="text-emerald-400" />,
-                                title: "Maintenance & Support",
-                                desc: "Continuous monitoring, system updates, and long-term technical partnership.",
-                                link: "/services#maintenance"
-                            }
-                        ].map((service, index) => (
+                        {services.map((service, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
@@ -181,15 +194,9 @@ const Home = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <SectionHeader title="Why Choose Us" align="left" />
+                            <SectionHeader title={t('home.whyChooseUs.title')} align="left" />
                             <div className="space-y-6">
-                                {[
-                                    { icon: <Shield />, title: "Fully In-House", desc: "We control every layer. No outsourcing, no compromises." },
-                                    { icon: <Zap />, title: "Fast Implementation", desc: "Agile processes ensure rapid delivery and easy iteration." },
-                                    { icon: <Code />, title: "Custom Solutions", desc: "No templates. Every system is designed around your goals." },
-                                    { icon: <Users />, title: "Direct Communication", desc: "Work directly with the people building your product." },
-                                    { icon: <TrendingUp />, title: "Long-term Partnership", desc: "We don't just deliver — we stay and grow with you." },
-                                ].map((feature, index) => (
+                                {features.map((feature, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, x: -20 }}
@@ -225,11 +232,11 @@ const Home = () => {
                                         <div className="relative h-48 rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center">
                                             <div className="text-center">
                                                 <Users className="text-cyan-400 mx-auto mb-2" size={48} />
-                                                <p className="text-slate-400 text-sm">Team Collaboration</p>
+                                                <p className="text-slate-400 text-sm">{t('home.whyChooseUs.cards.collaboration.label')}</p>
                                             </div>
                                         </div>
-                                        <h4 className="text-lg font-bold text-white mb-2">Collaborative Approach</h4>
-                                        <p className="text-sm text-slate-400">We work closely with your team</p>
+                                        <h4 className="text-lg font-bold text-white mb-2">{t('home.whyChooseUs.cards.collaboration.title')}</h4>
+                                        <p className="text-sm text-slate-400">{t('home.whyChooseUs.cards.collaboration.desc')}</p>
                                     </motion.div>
                                     <motion.div
                                         whileHover={{ scale: 1.05 }}
@@ -238,11 +245,11 @@ const Home = () => {
                                         <div className="relative h-48 rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-purple-500/20 to-emerald-600/20 flex items-center justify-center">
                                             <div className="text-center">
                                                 <Code className="text-purple-400 mx-auto mb-2" size={48} />
-                                                <p className="text-slate-400 text-sm">Clean Code</p>
+                                                <p className="text-slate-400 text-sm">{t('home.whyChooseUs.cards.architecture.label')}</p>
                                             </div>
                                         </div>
-                                        <h4 className="text-lg font-bold text-white mb-2">Robust Architecture</h4>
-                                        <p className="text-sm text-slate-400">Built for scalability and performance</p>
+                                        <h4 className="text-lg font-bold text-white mb-2">{t('home.whyChooseUs.cards.architecture.title')}</h4>
+                                        <p className="text-sm text-slate-400">{t('home.whyChooseUs.cards.architecture.desc')}</p>
                                     </motion.div>
                                 </div>
                             </div>
@@ -252,7 +259,7 @@ const Home = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-r from-cyan-500 to-blue-600 relative overflow-hidden">
+            <section className="py-20 bg-linear-to-r from-cyan-500 to-blue-600 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10" />
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     <motion.h2
@@ -261,7 +268,7 @@ const Home = () => {
                         viewport={{ once: true }}
                         className="text-3xl md:text-4xl font-bold text-slate-900 mb-6"
                     >
-                        Ready to Transform Your Operations?
+                        {t('home.cta.title')}
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -270,7 +277,7 @@ const Home = () => {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-slate-900/80 mb-8"
                     >
-                        Let's build intelligent digital solutions that drive your success forward
+                        {t('home.cta.subtitle')}
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -282,7 +289,7 @@ const Home = () => {
                             to="/contact"
                             className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-xl"
                         >
-                            Get Started Today <ArrowRight size={20} />
+                            {t('home.cta.button')} <ArrowRight size={20} />
                         </Link>
                     </motion.div>
                 </div>

@@ -21,71 +21,78 @@ import {
 import React from 'react';
 import SectionHeader from '../components/SectionHeader';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+    const { t } = useTranslation();
+
     const services = [
         {
             id: 'platform',
             icon: <Layout size={48} className="text-cyan-400" />,
-            title: "Digital Platform Development",
-            description: "Custom web applications, dashboards, and internal systems built with modern technologies.",
+            title: t('servicesPage.items.platform.title'),
+            description: t('servicesPage.items.platform.description'),
             features: [
-                { icon: <Monitor />, text: "Responsive Web Applications" },
-                { icon: <Smartphone />, text: "Mobile-First Design" },
-                { icon: <Code />, text: "Custom Dashboards & Portals" },
-                { icon: <Database />, text: "Backend Architecture" },
-                { icon: <Layers />, text: "Microservices Design" },
-                { icon: <GitBranch />, text: "API Development" },
+                { icon: <Monitor />, text: t('servicesPage.items.platform.features.responsive') },
+                { icon: <Smartphone />, text: t('servicesPage.items.platform.features.mobile') },
+                { icon: <Code />, text: t('servicesPage.items.platform.features.dashboards') },
+                { icon: <Database />, text: t('servicesPage.items.platform.features.backend') },
+                { icon: <Layers />, text: t('servicesPage.items.platform.features.microservices') },
+                { icon: <GitBranch />, text: t('servicesPage.items.platform.features.api') },
             ],
             technologies: ["React", "Node.js", "Python", "PostgreSQL", "MongoDB", "Next.js"],
+            technologiesLabel: t('servicesPage.items.platform.technologies'),
             color: "from-cyan-500 to-blue-600"
         },
         {
             id: 'ai',
             icon: <Cpu size={48} className="text-blue-500" />,
-            title: "AI Integration & Automation",
-            description: "Intelligent systems powered by machine learning and artificial intelligence.",
+            title: t('servicesPage.items.ai.title'),
+            description: t('servicesPage.items.ai.description'),
             features: [
-                { icon: <Zap />, text: "Process Automation" },
-                { icon: <BarChart />, text: "Predictive Analytics" },
-                { icon: <Code />, text: "Machine Learning Models" },
-                { icon: <Database />, text: "Data Processing Pipelines" },
-                { icon: <Monitor />, text: "AI-Powered Dashboards" },
-                { icon: <RefreshCw />, text: "Continuous Learning Systems" },
+                { icon: <Zap />, text: t('servicesPage.items.ai.features.automation') },
+                { icon: <BarChart />, text: t('servicesPage.items.ai.features.analytics') },
+                { icon: <Code />, text: t('servicesPage.items.ai.features.ml') },
+                { icon: <Database />, text: t('servicesPage.items.ai.features.data') },
+                { icon: <Monitor />, text: t('servicesPage.items.ai.features.dashboards') },
+                { icon: <RefreshCw />, text: t('servicesPage.items.ai.features.learning') },
             ],
             technologies: ["TensorFlow", "PyTorch", "OpenAI", "LangChain", "Scikit-learn", "Hugging Face"],
+            technologiesLabel: t('servicesPage.items.platform.technologies'), // Using same label key or distinct if needed
             color: "from-blue-500 to-purple-600"
         },
         {
             id: 'cloud',
             icon: <Cloud size={48} className="text-purple-500" />,
-            title: "Cloud & Infrastructure",
-            description: "Scalable cloud solutions with robust DevOps practices and continuous deployment.",
+            title: t('servicesPage.items.cloud.title'),
+            description: t('servicesPage.items.cloud.description'),
             features: [
-                { icon: <Server />, text: "Cloud Architecture Design" },
-                { icon: <Zap />, text: "Auto-Scaling Solutions" },
-                { icon: <GitBranch />, text: "CI/CD Pipelines" },
-                { icon: <Lock />, text: "Security Hardening" },
-                { icon: <BarChart />, text: "Performance Monitoring" },
-                { icon: <Database />, text: "Database Management" },
+                { icon: <Server />, text: t('servicesPage.items.cloud.features.architecture') },
+                { icon: <Zap />, text: t('servicesPage.items.cloud.features.scaling') },
+                { icon: <GitBranch />, text: t('servicesPage.items.cloud.features.cicd') },
+                { icon: <Lock />, text: t('servicesPage.items.cloud.features.security') },
+                { icon: <BarChart />, text: t('servicesPage.items.cloud.features.monitoring') },
+                { icon: <Database />, text: t('servicesPage.items.cloud.features.database') },
             ],
             technologies: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Terraform"],
+            technologiesLabel: t('servicesPage.items.platform.technologies'),
             color: "from-purple-500 to-pink-600"
         },
         {
             id: 'maintenance',
             icon: <Settings size={48} className="text-emerald-400" />,
-            title: "Maintenance & Support",
-            description: "24/7 monitoring, updates, and continuous improvement for your digital systems.",
+            title: t('servicesPage.items.maintenance.title'),
+            description: t('servicesPage.items.maintenance.description'),
             features: [
-                { icon: <ShieldCheck />, text: "24/7 System Monitoring" },
-                { icon: <RefreshCw />, text: "Regular Updates & Patches" },
-                { icon: <Lock />, text: "Security Audits" },
-                { icon: <BarChart />, text: "Performance Optimization" },
-                { icon: <Code />, text: "Bug Fixes & Enhancements" },
-                { icon: <Monitor />, text: "Technical Support" },
+                { icon: <ShieldCheck />, text: t('servicesPage.items.maintenance.features.monitoring') },
+                { icon: <RefreshCw />, text: t('servicesPage.items.maintenance.features.updates') },
+                { icon: <Lock />, text: t('servicesPage.items.maintenance.features.audits') },
+                { icon: <BarChart />, text: t('servicesPage.items.maintenance.features.optimization') },
+                { icon: <Code />, text: t('servicesPage.items.maintenance.features.fixes') },
+                { icon: <Monitor />, text: t('servicesPage.items.maintenance.features.support') },
             ],
             technologies: ["Grafana", "Prometheus", "New Relic", "Sentry", "PagerDuty", "Datadog"],
+            technologiesLabel: t('servicesPage.items.platform.technologies'),
             color: "from-emerald-500 to-teal-600"
         }
     ];
@@ -93,33 +100,33 @@ const Services = () => {
     const process = [
         {
             step: "01",
-            title: "Discovery & Analysis",
-            desc: "We understand your challenges, goals, and requirements through comprehensive consultation."
+            title: t('servicesPage.process.steps.discovery.title'),
+            desc: t('servicesPage.process.steps.discovery.desc')
         },
         {
             step: "02",
-            title: "Design & Planning",
-            desc: "Creating detailed technical specifications and user-centric design mockups."
+            title: t('servicesPage.process.steps.design.title'),
+            desc: t('servicesPage.process.steps.design.desc')
         },
         {
             step: "03",
-            title: "Development & Integration",
-            desc: "Building your solution using agile methodologies with regular progress updates."
+            title: t('servicesPage.process.steps.development.title'),
+            desc: t('servicesPage.process.steps.development.desc')
         },
         {
             step: "04",
-            title: "Testing & Quality Assurance",
-            desc: "Rigorous testing to ensure reliability, security, and performance."
+            title: t('servicesPage.process.steps.testing.title'),
+            desc: t('servicesPage.process.steps.testing.desc')
         },
         {
             step: "05",
-            title: "Deployment & Launch",
-            desc: "Seamless deployment with minimal disruption and comprehensive training."
+            title: t('servicesPage.process.steps.deployment.title'),
+            desc: t('servicesPage.process.steps.deployment.desc')
         },
         {
             step: "06",
-            title: "Support & Growth",
-            desc: "Ongoing maintenance, monitoring, and continuous improvement."
+            title: t('servicesPage.process.steps.support.title'),
+            desc: t('servicesPage.process.steps.support.desc')
         }
     ];
 
@@ -137,11 +144,12 @@ const Services = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center max-w-4xl mx-auto"
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Our <span className="text-gradient">Services</span>
-                        </h1>
+                        <h1
+                            className="text-4xl md:text-6xl font-bold text-white mb-6"
+                            dangerouslySetInnerHTML={{ __html: t('servicesPage.hero.title') }}
+                        />
                         <p className="text-xl text-slate-400 leading-relaxed">
-                            Comprehensive digital solutions designed to transform your operations and drive sustainable growth
+                            {t('servicesPage.hero.description')}
                         </p>
                     </motion.div>
                 </div>
@@ -164,7 +172,7 @@ const Services = () => {
                                 <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                                     {/* Content */}
                                     <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                                        <div className={`inline-block p-4 bg-gradient-to-r ${service.color} rounded-2xl mb-6`}>
+                                        <div className={`inline-block p-4 bg-linear-to-r ${service.color} rounded-2xl mb-6`}>
                                             {service.icon}
                                         </div>
                                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{service.title}</h2>
@@ -184,7 +192,7 @@ const Services = () => {
 
                                         {/* Technologies */}
                                         <div>
-                                            <h4 className="text-white font-semibold mb-3">Technologies We Use:</h4>
+                                            <h4 className="text-white font-semibold mb-3">{service.technologiesLabel}</h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {service.technologies.map((tech, idx) => (
                                                     <span
@@ -201,7 +209,7 @@ const Services = () => {
                                     {/* Visual Card */}
                                     <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
                                         <div className="relative">
-                                            <div className={`absolute inset-0 bg-gradient-to-r ${service.color} opacity-20 rounded-3xl blur-2xl`} />
+                                            <div className={`absolute inset-0 bg-linear-to-r ${service.color} opacity-20 rounded-3xl blur-2xl`} />
                                             <div className="relative glass-effect p-8 rounded-3xl">
                                                 <div className="space-y-4">
                                                     {service.features.slice(0, 3).map((feature, idx) => (
@@ -213,7 +221,7 @@ const Services = () => {
                                                             transition={{ delay: idx * 0.1 }}
                                                             className="flex items-center gap-4 p-4 bg-slate-950 rounded-xl"
                                                         >
-                                                            <div className={`p-3 bg-gradient-to-r ${service.color} opacity-20 rounded-lg`}>
+                                                            <div className={`p-3 bg-linear-to-r ${service.color} opacity-20 rounded-lg`}>
                                                                 {React.cloneElement(feature.icon, { size: 24 })}
                                                             </div>
                                                             <span className="text-white font-medium">{feature.text}</span>
@@ -234,8 +242,8 @@ const Services = () => {
             <section className="py-24 bg-slate-950">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeader
-                        title="Our Process"
-                        subtitle="A proven methodology for delivering exceptional results"
+                        title={t('servicesPage.process.title')}
+                        subtitle={t('servicesPage.process.subtitle')}
                     />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -260,19 +268,19 @@ const Services = () => {
             </section>
 
             {/* CTA */}
-            <section className="py-20 bg-gradient-to-r from-cyan-500 to-blue-600">
+            <section className="py-20 bg-linear-to-r from-cyan-500 to-blue-600">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                        Ready to Get Started?
+                        {t('servicesPage.cta.title')}
                     </h2>
                     <p className="text-lg text-slate-900/80 mb-8">
-                        Let's discuss how our services can transform your operations
+                        {t('servicesPage.cta.subtitle')}
                     </p>
                     <Link
                         to="/contact"
                         className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg transition-all transform hover:scale-105"
                     >
-                        Contact Us Today <ArrowRight size={20} />
+                        {t('servicesPage.cta.button')} <ArrowRight size={20} />
                     </Link>
                 </div>
             </section>

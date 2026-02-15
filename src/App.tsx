@@ -11,6 +11,9 @@ import Team from './pages/Team';
 import Careers from './pages/Careers';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Cookies from './pages/Cookies';
 import NotFound from './pages/NotFound';
 
 // Import shared components
@@ -20,9 +23,9 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <Router basename="/OpitmaTechHub-Website">
+    <Router basename="/OpitmaTechHub-Website/">
       <ScrollToTop />
-      <div className="bg-slate-950 min-h-screen text-slate-200 font-sans selection:bg-cyan-500/30">
+      <div className="bg-slate-950 min-h-screen text-slate-200 font-sans selection:bg-cyan-500/30 scrollbar-hide overflow-hidden">
         <Navbar />
         <AnimatePresence mode="wait">
           <Routes>
@@ -35,6 +38,9 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cookies" element={<Cookies />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

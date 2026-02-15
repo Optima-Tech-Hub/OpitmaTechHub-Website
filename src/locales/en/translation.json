@@ -1,0 +1,705 @@
+{
+    "common": {
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "readMore": "Read More",
+        "learnMore": "Learn More",
+        "getStarted": "Get Started",
+        "contactUs": "Contact Us",
+        "viewAll": "View All",
+        "backToHome": "Back to Home",
+        "effectiveDate": "Effective Date",
+        "required": "Required",
+        "optional": "Optional"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "ourStory": "Our Story",
+        "mission": "Mission & Vision",
+        "team": "Team",
+        "services": "Services",
+        "allServices": "All Services",
+        "aiIntegration": "AI Integration",
+        "cloudSolutions": "Cloud Solutions",
+        "maintenance": "Maintenance",
+        "solutions": "Solutions",
+        "caseStudies": "Case Studies",
+        "careers": "Careers",
+        "blog": "Blog",
+        "contact": "Contact",
+        "getStarted": "Get Started"
+    },
+    "footer": {
+        "company": {
+            "title": "Company",
+            "description": "Building intelligent digital platforms that transform operations through powerful software solutions integrated with artificial intelligence.",
+            "aboutUs": "About Us",
+            "team": "Team",
+            "careers": "Careers",
+            "contact": "Contact"
+        },
+        "services": {
+            "title": "Services",
+            "platformDev": "Digital Platform Dev",
+            "aiIntegration": "AI Integration",
+            "cloudSolutions": "Cloud Solutions",
+            "maintenance": "Maintenance & Support"
+        },
+        "resources": {
+            "title": "Resources",
+            "caseStudies": "Case Studies",
+            "blog": "Blog",
+            "solutions": "Solutions",
+            "faqs": "FAQs"
+        },
+        "cta": {
+            "heading": "Ready to Build Smarter Systems?",
+            "description": "Let's create intelligent digital solutions that move your institution forward.",
+            "button": "Contact Us"
+        },
+        "legal": {
+            "copyright": "All rights reserved.",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service",
+            "cookies": "Cookie Policy"
+        }
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "Your privacy is important to us. This policy outlines how we collect, use, and protect your personal information.",
+        "sections": {
+            "introduction": {
+                "title": "Introduction",
+                "content": [
+                    "At Optima Tech Hub, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
+                    "By accessing or using our services, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services."
+                ]
+            },
+            "dataCollection": {
+                "title": "Information We Collect",
+                "personalInfo": {
+                    "subtitle": "Personal Information",
+                    "description": "We may collect personal information that you voluntarily provide to us when you register on the website, express an interest in obtaining information about us or our products and services, or otherwise contact us. This may include:",
+                    "items": [
+                        "Name and contact information (email address, phone number)",
+                        "Company name and job title",
+                        "Billing and payment information",
+                        "Project requirements and specifications",
+                        "Communication preferences"
+                    ]
+                },
+                "automaticInfo": {
+                    "subtitle": "Automatically Collected Information",
+                    "description": "When you visit our website, we may automatically collect certain information about your device, including:",
+                    "items": [
+                        "IP address and browser type",
+                        "Operating system and device information",
+                        "Pages visited and time spent on pages",
+                        "Referring website addresses",
+                        "Cookies and similar tracking technologies"
+                    ]
+                }
+            },
+            "dataUsage": {
+                "title": "How We Use Your Information",
+                "primaryUses": {
+                    "subtitle": "Primary Uses",
+                    "description": "We use the information we collect or receive to:",
+                    "items": [
+                        "Provide, operate, and maintain our services",
+                        "Process your transactions and send related information",
+                        "Respond to your inquiries and provide customer support",
+                        "Send you technical notices, updates, and security alerts",
+                        "Communicate about products, services, and events",
+                        "Monitor and analyze usage and trends to improve user experience",
+                        "Detect, prevent, and address technical issues and security threats"
+                    ]
+                }
+            },
+            "dataProtection": {
+                "title": "Data Protection & Security",
+                "securityMeasures": {
+                    "subtitle": "Security Measures",
+                    "description": "We implement appropriate technical and organizational security measures to protect your personal information, including:",
+                    "items": [
+                        "Encryption of data in transit and at rest",
+                        "Regular security assessments and audits",
+                        "Access controls and authentication mechanisms",
+                        "Employee training on data protection",
+                        "Incident response and breach notification procedures"
+                    ]
+                }
+            },
+            "userRights": {
+                "title": "Your Privacy Rights",
+                "rights": {
+                    "subtitle": "Your Rights",
+                    "description": "Depending on your location, you may have the following rights regarding your personal information:",
+                    "items": [
+                        "Access: Request access to your personal information",
+                        "Correction: Request correction of inaccurate or incomplete data",
+                        "Deletion: Request deletion of your personal information",
+                        "Portability: Request transfer of your data to another service",
+                        "Objection: Object to processing of your personal information",
+                        "Restriction: Request restriction of processing your data",
+                        "Withdraw Consent: Withdraw consent for data processing"
+                    ]
+                }
+            },
+            "thirdParty": {
+                "title": "Third-Party Services",
+                "serviceProviders": {
+                    "subtitle": "Service Providers",
+                    "description": "We may share your information with third-party service providers who perform services on our behalf, such as:",
+                    "items": [
+                        "Cloud hosting and infrastructure providers",
+                        "Payment processing services",
+                        "Analytics and monitoring tools",
+                        "Email and communication platforms",
+                        "Customer relationship management systems"
+                    ]
+                }
+            }
+        },
+        "contact": {
+            "title": "Contact Us",
+            "description": "If you have any questions about this Privacy Policy, please contact us:"
+        },
+        "updates": {
+            "title": "Policy Updates",
+            "description": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the \"Effective Date\" at the top."
+        }
+    },
+    "terms": {
+        "title": "Terms of Service",
+        "subtitle": "Please read these terms carefully before using our services. By accessing or using our services, you agree to be bound by these terms.",
+        "sections": {
+            "introduction": {
+                "content": [
+                    "These Terms of Service (\"Terms\") govern your access to and use of Optima Tech Hub's website, products, and services (collectively, the \"Services\"). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy.",
+                    "If you do not agree to these Terms, you may not access or use our Services. We reserve the right to modify these Terms at any time, and such modifications will be effective immediately upon posting."
+                ]
+            },
+            "accountUse": {
+                "title": "Account Registration & Use",
+                "accountCreation": {
+                    "subtitle": "Account Creation",
+                    "description": "To access certain features of our Services, you may be required to create an account. When creating an account, you agree to:",
+                    "items": [
+                        "Provide accurate, current, and complete information",
+                        "Maintain and promptly update your account information",
+                        "Maintain the security of your account credentials",
+                        "Accept responsibility for all activities under your account",
+                        "Notify us immediately of any unauthorized access"
+                    ]
+                }
+            },
+            "acceptableUse": {
+                "title": "Acceptable Use Policy",
+                "permittedUse": {
+                    "subtitle": "Permitted Use",
+                    "description": "You may use our Services only for lawful purposes and in accordance with these Terms. You agree not to use our Services:",
+                    "items": [
+                        "In any way that violates applicable laws or regulations",
+                        "To transmit harmful, offensive, or inappropriate content",
+                        "To impersonate any person or entity",
+                        "To interfere with or disrupt our Services or servers",
+                        "To attempt unauthorized access to our systems",
+                        "To collect or harvest information about other users",
+                        "To engage in any automated use of the system"
+                    ]
+                }
+            },
+            "intellectualProperty": {
+                "title": "Intellectual Property Rights",
+                "ourIP": {
+                    "subtitle": "Our Intellectual Property",
+                    "description": "All content, features, and functionality of our Services, including but not limited to:",
+                    "items": [
+                        "Text, graphics, logos, and images",
+                        "Software, code, and algorithms",
+                        "Design, layout, and user interface",
+                        "Trademarks, service marks, and trade names",
+                        "Proprietary methodologies and processes"
+                    ],
+                    "additional": "are owned by Optima Tech Hub or our licensors and are protected by copyright, trademark, and other intellectual property laws."
+                }
+            }
+        }
+    },
+    "cookies": {
+        "title": "Cookie Policy",
+        "subtitle": "Learn about how we use cookies and similar technologies to provide, protect, and improve our services.",
+        "sections": {
+            "introduction": {
+                "content": [
+                    "This Cookie Policy explains how Optima Tech Hub uses cookies and similar tracking technologies when you visit our website. This policy provides you with clear and comprehensive information about the cookies we use and the purposes for using them.",
+                    "By continuing to use our website, you consent to our use of cookies in accordance with this Cookie Policy. If you do not agree to our use of cookies, you should change your browser settings accordingly or refrain from using our website."
+                ]
+            },
+            "whatAreCookies": {
+                "title": "What Are Cookies?",
+                "description": "Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners."
+            },
+            "cookieCategories": {
+                "essential": {
+                    "title": "Essential Cookies",
+                    "description": "These cookies are necessary for our website to function properly. They enable core functionality such as security, network management, and accessibility.",
+                    "retention": "Session or up to 1 year",
+                    "canDisable": "No"
+                },
+                "analytics": {
+                    "title": "Analytics Cookies",
+                    "description": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.",
+                    "retention": "Up to 2 years",
+                    "canDisable": "Yes"
+                },
+                "functionality": {
+                    "title": "Functionality Cookies",
+                    "description": "These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings.",
+                    "retention": "Up to 1 year",
+                    "canDisable": "Yes"
+                },
+                "marketing": {
+                    "title": "Marketing Cookies",
+                    "description": "These cookies track your online activity to help us deliver more relevant advertising and measure the effectiveness of our campaigns.",
+                    "retention": "Up to 2 years",
+                    "canDisable": "Yes"
+                }
+            },
+            "manageCookies": {
+                "title": "How to Manage Cookies",
+                "description": "You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences in several ways:",
+                "browserSettings": {
+                    "title": "Browser Settings",
+                    "description": "Most web browsers allow you to control cookies through their settings. You can set your browser to:"
+                }
+            }
+        }
+    },
+    "contact": {
+        "hero": {
+            "title": "Get In <span class=\"text-gradient\">Touch</span>",
+            "description": "Ready to transform your operations? Let's start a conversation about your project."
+        },
+        "info": {
+            "email": {
+                "title": "Email Us",
+                "details": "contact@optimatech.hub"
+            },
+            "phone": {
+                "title": "Call Us",
+                "details": "+1 (555) 123-4567"
+            },
+            "visit": {
+                "title": "Visit Us",
+                "details": "123 Tech Street, Innovation City, IC 12345"
+            }
+        },
+        "form": {
+            "title": "Send Us a Message",
+            "subtitle": "Fill out the form below and we'll get back to you within 24 hours.",
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "company": "Company",
+            "service": "Service Interested In",
+            "servicePlaceholder": "Select a service",
+            "services": {
+                "platform": "Digital Platform Development",
+                "ai": "AI Integration",
+                "cloud": "Cloud & Infrastructure",
+                "maintenance": "Maintenance & Support",
+                "other": "Other"
+            },
+            "message": "Message",
+            "messagePlaceholder": "Tell us about your project...",
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "success": "Your message has been sent successfully!",
+            "error": "An error occurred. Please try again."
+        },
+        "officeHours": {
+            "title": "Office Hours",
+            "weekdays": "Monday - Friday",
+            "weekdaysTime": "9:00 AM - 6:00 PM",
+            "saturday": "Saturday",
+            "saturdayTime": "10:00 AM - 4:00 PM",
+            "sunday": "Sunday",
+            "closed": "Closed"
+        },
+        "followUs": {
+            "title": "Follow Us"
+        },
+        "map": {
+            "label": "Map Location"
+        },
+        "quickResponse": {
+            "title": "Quick Response",
+            "description": "We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly."
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Building <span class=\"text-gradient\">Intelligent</span><br />Digital Platforms",
+            "description": "Optima Tech Hub helps institutions transform operations through powerful software solutions integrated with artificial intelligence.",
+            "startTransformation": "Start Transformation",
+            "learnMore": "Learn More",
+            "stats": {
+                "projects": "Projects Delivered",
+                "satisfaction": "Client Satisfaction",
+                "support": "Support Available"
+            }
+        },
+        "services": {
+            "title": "What We Do",
+            "subtitle": "Comprehensive digital solutions engineered for impact",
+            "items": {
+                "platform": {
+                    "title": "Digital Platform Dev",
+                    "desc": "Web & internal systems, custom dashboards, portals, and scalable backend architectures."
+                },
+                "ai": {
+                    "title": "AI Integration",
+                    "desc": "Intelligent automation, data-driven decision systems, and AI-powered workflows."
+                },
+                "cloud": {
+                    "title": "Cloud & Infrastructure",
+                    "desc": "Hosting, deployment, DevOps pipelines, and continuous performance optimization."
+                },
+                "maintenance": {
+                    "title": "Maintenance & Support",
+                    "desc": "Continuous monitoring, system updates, and long-term technical partnership."
+                }
+            }
+        },
+        "whyChooseUs": {
+            "title": "Why Choose Us",
+            "features": {
+                "inHouse": {
+                    "title": "Fully In-House",
+                    "desc": "We control every layer. No outsourcing, no compromises."
+                },
+                "fast": {
+                    "title": "Fast Implementation",
+                    "desc": "Agile processes ensure rapid delivery and easy iteration."
+                },
+                "custom": {
+                    "title": "Custom Solutions",
+                    "desc": "No templates. Every system is designed around your goals."
+                },
+                "communication": {
+                    "title": "Direct Communication",
+                    "desc": "Work directly with the people building your product."
+                },
+                "partnership": {
+                    "title": "Long-term Partnership",
+                    "desc": "We don't just deliver — we stay and grow with you."
+                }
+            },
+            "cards": {
+                "collaboration": {
+                    "title": "Collaborative Approach",
+                    "desc": "We work closely with your team",
+                    "label": "Team Collaboration"
+                },
+                "architecture": {
+                    "title": "Robust Architecture",
+                    "desc": "Built for scalability and performance",
+                    "label": "Clean Code"
+                }
+            }
+        },
+        "cta": {
+            "title": "Ready to Transform Your Operations?",
+            "subtitle": "Let's build intelligent digital solutions that drive your success forward",
+            "button": "Get Started Today"
+        }
+    },
+    "about": {
+        "hero": {
+            "title": "About <span class=\"text-gradient\">Optima Tech Hub</span>",
+            "description": "We are a technology-driven company specializing in digital platform development and AI integration, helping institutions transform their operations through intelligent software solutions."
+        },
+        "whoWeAre": {
+            "title": "Who We Are",
+            "p1": "<strong class=\"text-cyan-400\">Optima Tech Hub</strong> is a technology-driven company specializing in digital platform development and AI integration.",
+            "p2": "We design, build, and maintain intelligent systems that help organizations operate smarter, faster, and more efficiently. From initial setup to long-term maintenance, we deliver end-to-end solutions tailored to each institution's needs.",
+            "p3": "Our team of expert developers, AI specialists, and infrastructure engineers work together to create seamless digital experiences that drive real business value.",
+            "stats": {
+                "projects": "Projects Completed",
+                "satisfaction": "Client Satisfaction",
+                "team": "Team Members",
+                "support": "Support Available"
+            }
+        },
+        "mission": {
+            "title": "Our Mission",
+            "description": "To empower institutions with intelligent digital systems that simplify operations and unlock sustainable growth. We strive to deliver solutions that are not just functional, but transformative."
+        },
+        "vision": {
+            "title": "Our Vision",
+            "description": "To be the leading partner for institutions seeking intelligent digital transformation. We envision a future where every organization operates at peak efficiency through smart technology."
+        },
+        "values": {
+            "title": "Our Core Values",
+            "subtitle": "The principles that guide everything we do",
+            "items": {
+                "innovation": {
+                    "title": "Innovation First",
+                    "desc": "We leverage cutting-edge technology to solve real-world problems"
+                },
+                "client": {
+                    "title": "Client-Centric",
+                    "desc": "Your success is our mission. We build solutions tailored to your needs"
+                },
+                "excellence": {
+                    "title": "Excellence",
+                    "desc": "We deliver premium quality in every line of code and every interaction"
+                },
+                "global": {
+                    "title": "Global Impact",
+                    "desc": "Building solutions that scale and make a difference worldwide"
+                }
+            }
+        },
+        "journey": {
+            "title": "Our Journey",
+            "subtitle": "Key milestones in our growth story",
+            "milestones": {
+                "2020": {
+                    "title": "Company Founded",
+                    "desc": "Started with a vision to transform digital operations"
+                },
+                "2021": {
+                    "title": "First Major Client",
+                    "desc": "Delivered comprehensive platform for enterprise institution"
+                },
+                "2022": {
+                    "title": "AI Integration",
+                    "desc": "Launched AI-powered solutions and automation services"
+                },
+                "2023": {
+                    "title": "50+ Projects",
+                    "desc": "Reached milestone of 50+ successful project deliveries"
+                },
+                "2024": {
+                    "title": "Global Expansion",
+                    "desc": "Extended operations to serve international clients"
+                }
+            }
+        }
+    },
+    "servicesPage": {
+        "hero": {
+            "title": "Our <span class=\"text-gradient\">Services</span>",
+            "description": "Comprehensive digital solutions designed to transform your operations and drive sustainable growth"
+        },
+        "items": {
+            "platform": {
+                "title": "Digital Platform Development",
+                "description": "Custom web applications, dashboards, and internal systems built with modern technologies.",
+                "features": {
+                    "responsive": "Responsive Web Applications",
+                    "mobile": "Mobile-First Design",
+                    "dashboards": "Custom Dashboards & Portals",
+                    "backend": "Backend Architecture",
+                    "microservices": "Microservices Design",
+                    "api": "API Development"
+                },
+                "technologies": "Technologies We Use:"
+            },
+            "ai": {
+                "title": "AI Integration & Automation",
+                "description": "Intelligent systems powered by machine learning and artificial intelligence.",
+                "features": {
+                    "automation": "Process Automation",
+                    "analytics": "Predictive Analytics",
+                    "ml": "Machine Learning Models",
+                    "data": "Data Processing Pipelines",
+                    "dashboards": "AI-Powered Dashboards",
+                    "learning": "Continuous Learning Systems"
+                }
+            },
+            "cloud": {
+                "title": "Cloud & Infrastructure",
+                "description": "Scalable cloud solutions with robust DevOps practices and continuous deployment.",
+                "features": {
+                    "architecture": "Cloud Architecture Design",
+                    "scaling": "Auto-Scaling Solutions",
+                    "cicd": "CI/CD Pipelines",
+                    "security": "Security Hardening",
+                    "monitoring": "Performance Monitoring",
+                    "database": "Database Management"
+                }
+            },
+            "maintenance": {
+                "title": "Maintenance & Support",
+                "description": "24/7 monitoring, updates, and continuous improvement for your digital systems.",
+                "features": {
+                    "monitoring": "24/7 System Monitoring",
+                    "updates": "Regular Updates & Patches",
+                    "audits": "Security Audits",
+                    "optimization": "Performance Optimization",
+                    "fixes": "Bug Fixes & Enhancements",
+                    "support": "Technical Support"
+                }
+            }
+        },
+        "process": {
+            "title": "Our Process",
+            "subtitle": "A proven methodology for delivering exceptional results",
+            "steps": {
+                "discovery": {
+                    "title": "Discovery & Analysis",
+                    "desc": "We understand your challenges, goals, and requirements through comprehensive consultation."
+                },
+                "design": {
+                    "title": "Design & Planning",
+                    "desc": "Creating detailed technical specifications and user-centric design mockups."
+                },
+                "development": {
+                    "title": "Development & Integration",
+                    "desc": "Building your solution using agile methodologies with regular progress updates."
+                },
+                "testing": {
+                    "title": "Testing & Quality Assurance",
+                    "desc": "Rigorous testing to ensure reliability, security, and performance."
+                },
+                "deployment": {
+                    "title": "Deployment & Launch",
+                    "desc": "Seamless deployment with minimal disruption and comprehensive training."
+                },
+                "support": {
+                    "title": "Support & Growth",
+                    "desc": "Ongoing maintenance, monitoring, and continuous improvement."
+                }
+            }
+        },
+        "cta": {
+            "title": "Ready to Get Started?",
+            "subtitle": "Let's discuss how our services can transform your operations",
+            "button": "Contact Us Today"
+        }
+    },
+    "solutionsPage": {
+        "hero": {
+            "title": "Industry <span class=\"text-gradient\">Solutions</span>",
+            "subtitle": "Tailored digital platforms designed for your specific industry needs"
+        },
+        "items": {
+            "enterprise": {
+                "industry": "Enterprise & Corporate",
+                "title": "Digital Transformation for Large Organizations",
+                "desc": "Comprehensive platforms for enterprise resource planning, workflow automation, and data analytics.",
+                "features": [
+                    "Custom ERP Systems",
+                    "Workflow Automation",
+                    "Data Analytics Dashboards",
+                    "Document Management",
+                    "Employee Portals"
+                ],
+                "benefits": [
+                    "40% increase in operational efficiency",
+                    "Real-time business insights",
+                    "Reduced operational costs"
+                ]
+            },
+            "education": {
+                "industry": "Education",
+                "title": "Smart Learning Management Systems",
+                "desc": "Integrated platforms for student management, online learning, and administrative automation.",
+                "features": [
+                    "Student Information Systems",
+                    "Online Learning Platforms",
+                    "Automated Grading Systems",
+                    "Parent-Teacher Portals",
+                    "Analytics & Reporting"
+                ],
+                "benefits": [
+                    "Streamlined administration",
+                    "Enhanced learning experience",
+                    "Data-driven insights"
+                ]
+            },
+            "healthcare": {
+                "industry": "Healthcare",
+                "title": "Healthcare Management Platforms",
+                "desc": "HIPAA-compliant systems for patient management, scheduling, and medical records.",
+                "features": [
+                    "Electronic Health Records",
+                    "Appointment Scheduling",
+                    "Patient Portals",
+                    "Billing Integration",
+                    "Compliance Management"
+                ],
+                "benefits": [
+                    "Improved patient care",
+                    "HIPAA compliance",
+                    "Operational efficiency"
+                ]
+            },
+            "retail": {
+                "industry": "E-Commerce & Retail",
+                "title": "Intelligent E-Commerce Solutions",
+                "desc": "Full-stack e-commerce platforms with AI-powered recommendations and inventory management.",
+                "features": [
+                    "Custom Shopping Platforms",
+                    "AI Product Recommendations",
+                    "Inventory Management",
+                    "Payment Integration",
+                    "Customer Analytics"
+                ],
+                "benefits": [
+                    "Increased conversion rates",
+                    "Better customer experience",
+                    "Automated operations"
+                ]
+            },
+            "finance": {
+                "industry": "Financial Services",
+                "title": "Fintech & Banking Solutions",
+                "desc": "Secure financial platforms with real-time processing and compliance features.",
+                "features": [
+                    "Payment Processing",
+                    "Financial Dashboards",
+                    "Compliance Automation",
+                    "Risk Management",
+                    "Customer Portals"
+                ],
+                "benefits": [
+                    "Enhanced security",
+                    "Regulatory compliance",
+                    "Real-time processing"
+                ]
+            },
+            "manufacturing": {
+                "industry": "Manufacturing & Logistics",
+                "title": "Supply Chain & Operations Management",
+                "desc": "IoT-integrated systems for inventory tracking, production scheduling, and logistics.",
+                "features": [
+                    "Inventory Tracking",
+                    "Production Scheduling",
+                    "Quality Control",
+                    "Logistics Management",
+                    "IoT Integration"
+                ],
+                "benefits": [
+                    "Reduced waste",
+                    "Optimized operations",
+                    "Real-time tracking"
+                ]
+            }
+        },
+        "labels": {
+            "features": "Key Features:",
+            "benefits": "Benefits"
+        },
+        "cta": {
+            "title": "Don't See Your Industry?",
+            "subtitle": "We create custom solutions for any industry. Let's discuss your specific needs.",
+            "button": "Contact Us"
+        }
+    }
+}

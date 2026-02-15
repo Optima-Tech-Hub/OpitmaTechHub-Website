@@ -26,7 +26,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
             whileInView={{ opacity: 1, width: align === 'center' ? '6rem' : '4rem' }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className={`h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full ${align === 'center' ? 'mx-auto' : ''} mb-6`}
+            className={`h-1 bg-linear-to-r from-cyan-500 to-blue-600 rounded-full ${align === 'center' ? 'mx-auto' : ''} mb-6`}
         />
         {subtitle && (
             <motion.p

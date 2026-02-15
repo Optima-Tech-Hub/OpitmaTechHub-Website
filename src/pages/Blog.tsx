@@ -4,7 +4,7 @@ import SectionHeader from '../components/SectionHeader';
 
 const Blog = () => {
     const blogPosts = [
-        
+
         {
             title: "The Future of AI in Enterprise Software",
             excerpt: "Exploring how artificial intelligence is reshaping enterprise operations and what it means for businesses in 2024 and beyond.",
@@ -100,8 +100,8 @@ const Blog = () => {
                             <button
                                 key={index}
                                 className={`px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all ${index === 0
-                                        ? 'bg-cyan-500 text-slate-900'
-                                        : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                                    ? 'bg-cyan-500 text-slate-900'
+                                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
                                     }`}
                             >
                                 {category}
@@ -132,7 +132,7 @@ const Blog = () => {
                             )}
                         </div>
                         <div className="p-8 lg:p-12 flex flex-col justify-center">
-                            <div className={`inline-block px-3 py-1 bg-gradient-to-r ${blogPosts[0].color} text-white text-xs font-semibold rounded-full mb-4 w-fit`}>
+                            <div className={`inline-block px-3 py-1 bg-linear-to-r ${blogPosts[0].color} text-white text-xs font-semibold rounded-full mb-4 w-fit`}>
                                 {blogPosts[0].category}
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
@@ -178,7 +178,7 @@ const Blog = () => {
                                 transition={{ delay: index * 0.1 }}
                                 className="glass-effect rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all group cursor-pointer"
                             >
-                                <div className={`h-2 bg-gradient-to-r ${post.color}`} />
+                                <div className={`h-2 bg-linear-to-r ${post.color}`} />
 
                                 {post.image && (
                                     <div className="h-48 bg-slate-900 overflow-hidden">
@@ -229,7 +229,7 @@ const Blog = () => {
             </section>
 
             {/* Newsletter */}
-            <section className="py-20 bg-gradient-to-r from-cyan-500 to-blue-600">
+            <section className="py-20 bg-linear-to-r from-cyan-500 to-blue-600">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                         Subscribe to Our Newsletter

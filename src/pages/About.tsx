@@ -1,37 +1,40 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Award, Users, Globe } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+    const { t } = useTranslation();
+
     const values = [
         {
             icon: <Target size={32} className="text-cyan-400" />,
-            title: "Innovation First",
-            desc: "We leverage cutting-edge technology to solve real-world problems"
+            title: t('about.values.items.innovation.title'),
+            desc: t('about.values.items.innovation.desc')
         },
         {
             icon: <Users size={32} className="text-blue-500" />,
-            title: "Client-Centric",
-            desc: "Your success is our mission. We build solutions tailored to your needs"
+            title: t('about.values.items.client.title'),
+            desc: t('about.values.items.client.desc')
         },
         {
             icon: <Award size={32} className="text-purple-500" />,
-            title: "Excellence",
-            desc: "We deliver premium quality in every line of code and every interaction"
+            title: t('about.values.items.excellence.title'),
+            desc: t('about.values.items.excellence.desc')
         },
         {
             icon: <Globe size={32} className="text-emerald-400" />,
-            title: "Global Impact",
-            desc: "Building solutions that scale and make a difference worldwide"
+            title: t('about.values.items.global.title'),
+            desc: t('about.values.items.global.desc')
         }
     ];
 
     const milestones = [
-        { year: '2020', title: 'Company Founded', desc: 'Started with a vision to transform digital operations' },
-        { year: '2021', title: 'First Major Client', desc: 'Delivered comprehensive platform for enterprise institution' },
-        { year: '2022', title: 'AI Integration', desc: 'Launched AI-powered solutions and automation services' },
-        { year: '2023', title: '50+ Projects', desc: 'Reached milestone of 50+ successful project deliveries' },
-        { year: '2024', title: 'Global Expansion', desc: 'Extended operations to serve international clients' },
+        { year: '2020', title: t('about.journey.milestones.2020.title'), desc: t('about.journey.milestones.2020.desc') },
+        { year: '2021', title: t('about.journey.milestones.2021.title'), desc: t('about.journey.milestones.2021.desc') },
+        { year: '2022', title: t('about.journey.milestones.2022.title'), desc: t('about.journey.milestones.2022.desc') },
+        { year: '2023', title: t('about.journey.milestones.2023.title'), desc: t('about.journey.milestones.2023.desc') },
+        { year: '2024', title: t('about.journey.milestones.2024.title'), desc: t('about.journey.milestones.2024.desc') },
     ];
 
     return (
@@ -47,12 +50,12 @@ const About = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center max-w-4xl mx-auto"
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            About <span className="text-gradient">Optima Tech Hub</span>
-                        </h1>
+                        <h1
+                            className="text-4xl md:text-6xl font-bold text-white mb-6"
+                            dangerouslySetInnerHTML={{ __html: t('about.hero.title') }}
+                        />
                         <p className="text-xl text-slate-400 leading-relaxed">
-                            We are a technology-driven company specializing in digital platform development and AI integration,
-                            helping institutions transform their operations through intelligent software solutions.
+                            {t('about.hero.description')}
                         </p>
                     </motion.div>
                 </div>
@@ -67,17 +70,11 @@ const About = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <SectionHeader title="Who We Are" align="left" />
+                            <SectionHeader title={t('about.whoWeAre.title')} align="left" />
                             <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
-                                <p>
-                                    <strong className="text-cyan-400">Optima Tech Hub</strong> is a technology-driven company specializing in digital platform development and AI integration.
-                                </p>
-                                <p>
-                                    We design, build, and maintain intelligent systems that help organizations operate smarter, faster, and more efficiently. From initial setup to long-term maintenance, we deliver end-to-end solutions tailored to each institution's needs.
-                                </p>
-                                <p>
-                                    Our team of expert developers, AI specialists, and infrastructure engineers work together to create seamless digital experiences that drive real business value.
-                                </p>
+                                <p dangerouslySetInnerHTML={{ __html: t('about.whoWeAre.p1') }} />
+                                <p>{t('about.whoWeAre.p2')}</p>
+                                <p>{t('about.whoWeAre.p3')}</p>
                             </div>
                         </motion.div>
 
@@ -92,19 +89,19 @@ const About = () => {
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="text-center p-6 bg-slate-950 rounded-xl">
                                         <div className="text-4xl font-bold text-gradient mb-2">50+</div>
-                                        <div className="text-sm text-slate-400">Projects Completed</div>
+                                        <div className="text-sm text-slate-400">{t('about.whoWeAre.stats.projects')}</div>
                                     </div>
                                     <div className="text-center p-6 bg-slate-950 rounded-xl">
                                         <div className="text-4xl font-bold text-gradient mb-2">98%</div>
-                                        <div className="text-sm text-slate-400">Client Satisfaction</div>
+                                        <div className="text-sm text-slate-400">{t('about.whoWeAre.stats.satisfaction')}</div>
                                     </div>
                                     <div className="text-center p-6 bg-slate-950 rounded-xl">
                                         <div className="text-4xl font-bold text-gradient mb-2">15+</div>
-                                        <div className="text-sm text-slate-400">Team Members</div>
+                                        <div className="text-sm text-slate-400">{t('about.whoWeAre.stats.team')}</div>
                                     </div>
                                     <div className="text-center p-6 bg-slate-950 rounded-xl">
                                         <div className="text-4xl font-bold text-gradient mb-2">24/7</div>
-                                        <div className="text-sm text-slate-400">Support Available</div>
+                                        <div className="text-sm text-slate-400">{t('about.whoWeAre.stats.support')}</div>
                                     </div>
                                 </div>
                             </div>
@@ -127,11 +124,10 @@ const About = () => {
                                 <div className="p-3 bg-cyan-500/10 rounded-lg">
                                     <Target className="text-cyan-400" size={32} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white">Our Mission</h3>
+                                <h3 className="text-2xl font-bold text-white">{t('about.mission.title')}</h3>
                             </div>
                             <p className="text-slate-300 leading-relaxed">
-                                To empower institutions with intelligent digital systems that simplify operations and unlock sustainable growth.
-                                We strive to deliver solutions that are not just functional, but transformative.
+                                {t('about.mission.description')}
                             </p>
                         </motion.div>
 
@@ -146,11 +142,10 @@ const About = () => {
                                 <div className="p-3 bg-blue-500/10 rounded-lg">
                                     <Eye className="text-blue-400" size={32} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white">Our Vision</h3>
+                                <h3 className="text-2xl font-bold text-white">{t('about.vision.title')}</h3>
                             </div>
                             <p className="text-slate-300 leading-relaxed">
-                                To be the leading partner for institutions seeking intelligent digital transformation.
-                                We envision a future where every organization operates at peak efficiency through smart technology.
+                                {t('about.vision.description')}
                             </p>
                         </motion.div>
                     </div>
@@ -161,8 +156,8 @@ const About = () => {
             <section className="py-24 bg-slate-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeader
-                        title="Our Core Values"
-                        subtitle="The principles that guide everything we do"
+                        title={t('about.values.title')}
+                        subtitle={t('about.values.subtitle')}
                     />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -191,8 +186,8 @@ const About = () => {
             <section className="py-24 bg-slate-950">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeader
-                        title="Our Journey"
-                        subtitle="Key milestones in our growth story"
+                        title={t('about.journey.title')}
+                        subtitle={t('about.journey.subtitle')}
                     />
 
                     <div className="relative">
@@ -217,7 +212,7 @@ const About = () => {
                                         </div>
                                     </div>
 
-                                    <div className="hidden md:block w-4 h-4 bg-cyan-500 rounded-full border-4 border-slate-950 relative z-10 flex-shrink-0" />
+                                    <div className="hidden md:block w-4 h-4 bg-cyan-500 rounded-full border-4 border-slate-950 relative z-10 shrink-0" />
 
                                     <div className="flex-1" />
                                 </motion.div>
