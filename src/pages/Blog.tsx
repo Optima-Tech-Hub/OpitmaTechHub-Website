@@ -1,73 +1,53 @@
 import { motion } from 'framer-motion';
 import { Calendar, Clock, User, ArrowRight, Tag } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
+import { useTranslation } from 'react-i18next';
 
 const Blog = () => {
-    const blogPosts = [
+    const { t } = useTranslation();
 
+    const blogPosts = [
         {
-            title: "The Future of AI in Enterprise Software",
-            excerpt: "Exploring how artificial intelligence is reshaping enterprise operations and what it means for businesses in 2024 and beyond.",
-            author: "Amer",
-            date: "Feb 10, 2026",
-            readTime: "8 min read",
-            category: "AI & Machine Learning",
+            id: 'futureAi',
             image: "hero_tech_visualization_1771165748665.png",
             color: "from-cyan-500 to-blue-600"
         },
         {
-            title: "Building Scalable Cloud Infrastructure",
-            excerpt: "Best practices for designing and implementing cloud infrastructure that grows with your business needs.",
-            author: "Hisham",
-            date: "Feb 8, 2026",
-            readTime: "10 min read",
-            category: "Cloud & DevOps",
+            id: 'cloudInfra',
             image: null,
             color: "from-blue-500 to-purple-600"
         },
         {
-            title: "UX Design Principles for B2B Platforms",
-            excerpt: "How to create intuitive interfaces for complex business applications that users actually enjoy using.",
-            author: "Design Team",
-            date: "Feb 5, 2026",
-            readTime: "6 min read",
-            category: "Design & UX",
+            id: 'uxDesign',
             image: null,
             color: "from-purple-500 to-pink-600"
         },
         {
-            title: "Cybersecurity Best Practices for 2026",
-            excerpt: "Essential security measures every organization should implement to protect their digital assets.",
-            author: "Security Team",
-            date: "Feb 1, 2026",
-            readTime: "12 min read",
-            category: "Security",
+            id: 'security',
             image: null,
             color: "from-emerald-500 to-teal-600"
         },
         {
-            title: "Microservices Architecture: When and Why",
-            excerpt: "Understanding when to adopt microservices and how to implement them effectively for your organization.",
-            author: "Hisham",
-            date: "Jan 28, 2026",
-            readTime: "9 min read",
-            category: "Architecture",
+            id: 'microservices',
             image: null,
             color: "from-orange-500 to-red-600"
         },
         {
-            title: "The ROI of Digital Transformation",
-            excerpt: "Measuring the real business impact of digital transformation initiatives with concrete metrics and case studies.",
-            author: "Saleh",
-            date: "Jan 25, 2026",
-            readTime: "7 min read",
-            category: "Business Strategy",
+            id: 'roi',
             image: null,
             color: "from-indigo-500 to-purple-600"
         }
     ];
 
-    const categories = ["All", "AI & Machine Learning", "Cloud & DevOps", "Design & UX", "Security", "Architecture", "Business Strategy"];
+    const categories = [
+        { id: 'all', key: 'blogPage.categories.all' },
+        { id: 'ai', key: 'blogPage.categories.ai' },
+        { id: 'cloud', key: 'blogPage.categories.cloud' },
+        { id: 'design', key: 'blogPage.categories.design' },
+        { id: 'security', key: 'blogPage.categories.security' },
+        { id: 'architecture', key: 'blogPage.categories.architecture' },
+        { id: 'business', key: 'blogPage.categories.business' }
+    ];
 
     return (
         <div className="min-h-screen pt-20">
@@ -82,11 +62,12 @@ const Blog = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center max-w-4xl mx-auto"
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Our <span className="text-gradient">Blog</span>
-                        </h1>
+                        <h1
+                            className="text-4xl md:text-6xl font-bold text-white mb-6"
+                            dangerouslySetInnerHTML={{ __html: t('blogPage.hero.title') }}
+                        />
                         <p className="text-xl text-slate-400 leading-relaxed">
-                            Insights, tutorials, and thoughts on technology, AI, and digital transformation
+                            {t('blogPage.hero.subtitle')}
                         </p>
                     </motion.div>
                 </div>
@@ -104,7 +85,7 @@ const Blog = () => {
                                     : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
                                     }`}
                             >
-                                {category}
+                                {t(category.key)}
                             </button>
                         ))}
                     </div>
@@ -114,7 +95,9 @@ const Blog = () => {
             {/* Featured Post */}
             <section className="py-16 bg-slate-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-4">Featured Post</div>
+                    <div className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-4">
+                        {t('blogPage.featured.label')}
+                    </div>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -126,37 +109,37 @@ const Blog = () => {
                             {blogPosts[0].image && (
                                 <img
                                     src={blogPosts[0].image}
-                                    alt={blogPosts[0].title}
+                                    alt={t(`blogPage.posts.${blogPosts[0].id}.title`)}
                                     className="w-full h-full object-cover"
                                 />
                             )}
                         </div>
                         <div className="p-8 lg:p-12 flex flex-col justify-center">
                             <div className={`inline-block px-3 py-1 bg-linear-to-r ${blogPosts[0].color} text-white text-xs font-semibold rounded-full mb-4 w-fit`}>
-                                {blogPosts[0].category}
+                                {t(`blogPage.posts.${blogPosts[0].id}.category`)}
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
-                                {blogPosts[0].title}
+                                {t(`blogPage.posts.${blogPosts[0].id}.title`)}
                             </h2>
                             <p className="text-slate-400 leading-relaxed mb-6">
-                                {blogPosts[0].excerpt}
+                                {t(`blogPage.posts.${blogPosts[0].id}.excerpt`)}
                             </p>
                             <div className="flex items-center gap-4 text-sm text-slate-500 mb-6">
                                 <div className="flex items-center gap-2">
                                     <User size={16} />
-                                    {blogPosts[0].author}
+                                    {t(`blogPage.posts.${blogPosts[0].id}.author`)}
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Calendar size={16} />
-                                    {blogPosts[0].date}
+                                    {t(`blogPage.posts.${blogPosts[0].id}.date`)}
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Clock size={16} />
-                                    {blogPosts[0].readTime}
+                                    {t(`blogPage.posts.${blogPosts[0].id}.readTime`)}
                                 </div>
                             </div>
                             <button className="flex items-center gap-2 text-cyan-400 font-semibold hover:gap-3 transition-all">
-                                Read More <ArrowRight size={18} />
+                                {t('blogPage.featured.readMore')} <ArrowRight size={18} />
                             </button>
                         </div>
                     </motion.div>
@@ -166,7 +149,10 @@ const Blog = () => {
             {/* Blog Posts Grid */}
             <section className="py-16 bg-slate-950">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader title="Latest Articles" subtitle="Stay updated with our latest insights" />
+                    <SectionHeader
+                        title={t('blogPage.latest.title')}
+                        subtitle={t('blogPage.latest.subtitle')}
+                    />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {blogPosts.slice(1).map((post, index) => (
@@ -184,7 +170,7 @@ const Blog = () => {
                                     <div className="h-48 bg-slate-900 overflow-hidden">
                                         <img
                                             src={post.image}
-                                            alt={post.title}
+                                            alt={t(`blogPage.posts.${post.id}.title`)}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                                         />
                                     </div>
@@ -193,32 +179,36 @@ const Blog = () => {
                                 <div className="p-6">
                                     <div className="flex items-center gap-2 mb-3">
                                         <Tag size={14} className="text-cyan-400" />
-                                        <span className="text-xs font-semibold text-cyan-400">{post.category}</span>
+                                        <span className="text-xs font-semibold text-cyan-400">
+                                            {t(`blogPage.posts.${post.id}.category`)}
+                                        </span>
                                     </div>
 
                                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                                        {post.title}
+                                        {t(`blogPage.posts.${post.id}.title`)}
                                     </h3>
 
                                     <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                                        {post.excerpt}
+                                        {t(`blogPage.posts.${post.id}.excerpt`)}
                                     </p>
 
                                     <div className="flex items-center gap-4 text-xs text-slate-500 mb-4">
                                         <div className="flex items-center gap-1">
                                             <User size={14} />
-                                            {post.author}
+                                            {t(`blogPage.posts.${post.id}.author`)}
                                         </div>
                                         <div className="flex items-center gap-1">
                                             <Calendar size={14} />
-                                            {post.date}
+                                            {t(`blogPage.posts.${post.id}.date`)}
                                         </div>
                                     </div>
 
                                     <div className="flex items-center justify-between pt-4 border-t border-slate-800">
-                                        <span className="text-xs text-slate-500">{post.readTime}</span>
+                                        <span className="text-xs text-slate-500">
+                                            {t(`blogPage.posts.${post.id}.readTime`)}
+                                        </span>
                                         <button className="flex items-center gap-1 text-cyan-400 text-sm font-semibold hover:gap-2 transition-all">
-                                            Read <ArrowRight size={16} />
+                                            {t('blogPage.latest.read')} <ArrowRight size={16} />
                                         </button>
                                     </div>
                                 </div>
@@ -232,19 +222,19 @@ const Blog = () => {
             <section className="py-20 bg-linear-to-r from-cyan-500 to-blue-600">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                        Subscribe to Our Newsletter
+                        {t('blogPage.newsletter.title')}
                     </h2>
                     <p className="text-lg text-slate-900/80 mb-8">
-                        Get the latest articles and insights delivered to your inbox
+                        {t('blogPage.newsletter.subtitle')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                         <input
                             type="email"
-                            placeholder="Your email address"
+                            placeholder={t('blogPage.newsletter.placeholder')}
                             className="flex-1 px-6 py-4 rounded-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900"
                         />
                         <button className="px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg transition-all transform hover:scale-105">
-                            Subscribe
+                            {t('blogPage.newsletter.button')}
                         </button>
                     </div>
                 </div>

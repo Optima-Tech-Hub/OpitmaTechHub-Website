@@ -1,15 +1,14 @@
 import { motion } from 'framer-motion';
 import { Linkedin, Mail, Github } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
-import Logo from '../components/Logo';
+import { useTranslation } from 'react-i18next';
 
 const Team = () => {
+    const { t } = useTranslation();
+
     const founders = [
         {
-            name: "Amer",
-            role: "Co-Founder & CEO",
-            focus: "Product Vision & AI Strategy",
-            description: "Leads overall product vision, defines AI strategy, and oversees system architecture. With 10+ years in tech, Amer brings deep expertise in AI and machine learning.",
+            id: 'amer',
             color: "from-blue-500 to-cyan-500",
             avatar: "A",
             social: {
@@ -19,10 +18,7 @@ const Team = () => {
             }
         },
         {
-            name: "Hisham",
-            role: "Co-Founder & CTO",
-            focus: "Engineering, UI & Infrastructure",
-            description: "Oversees engineering excellence, UI/UX design, and manages cloud infrastructure for scalability. Expert in modern web technologies and system architecture.",
+            id: 'hisham',
             color: "from-purple-500 to-pink-500",
             avatar: "H",
             social: {
@@ -32,10 +28,7 @@ const Team = () => {
             }
         },
         {
-            name: "Saleh",
-            role: "Co-Founder & CGO",
-            focus: "Business Growth & Client Relations",
-            description: "Leads client communication, project coordination, and drives business strategy. Passionate about building long-term client relationships.",
+            id: 'saleh',
             color: "from-emerald-500 to-teal-500",
             avatar: "S",
             social: {
@@ -46,44 +39,7 @@ const Team = () => {
         }
     ];
 
-    const teamMembers = [
-        {
-            name: "Sarah Chen",
-            role: "Lead AI Engineer",
-            expertise: "Machine Learning & NLP",
-            avatar: "SC"
-        },
-        {
-            name: "Michael Rodriguez",
-            role: "Senior Full-Stack Developer",
-            expertise: "React, Node.js, Cloud",
-            avatar: "MR"
-        },
-        {
-            name: "Aisha Patel",
-            role: "UX/UI Designer",
-            expertise: "Product Design & Research",
-            avatar: "AP"
-        },
-        {
-            name: "David Kim",
-            role: "DevOps Engineer",
-            expertise: "Cloud Infrastructure & CI/CD",
-            avatar: "DK"
-        },
-        {
-            name: "Emma Thompson",
-            role: "Data Scientist",
-            expertise: "Analytics & Visualization",
-            avatar: "ET"
-        },
-        {
-            name: "James Wilson",
-            role: "Backend Developer",
-            expertise: "Python, APIs, Databases",
-            avatar: "JW"
-        }
-    ];
+    const teamMembers = t('teamPage.teamMembers.items', { returnObjects: true }) as any[];
 
     return (
         <div className="min-h-screen pt-20">
@@ -98,11 +54,12 @@ const Team = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center max-w-4xl mx-auto"
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Meet Our <span className="text-gradient">Team</span>
-                        </h1>
+                        <h1
+                            className="text-4xl md:text-6xl font-bold text-white mb-6"
+                            dangerouslySetInnerHTML={{ __html: t('teamPage.hero.title') }}
+                        />
                         <p className="text-xl text-slate-400 leading-relaxed">
-                            The talented people behind your digital transformation
+                            {t('teamPage.hero.subtitle')}
                         </p>
                     </motion.div>
                 </div>
@@ -111,7 +68,10 @@ const Team = () => {
             {/* Founders */}
             <section className="py-24 bg-slate-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader title="The Founders" subtitle="The minds behind the machines" />
+                    <SectionHeader
+                        title={t('teamPage.founders.title')}
+                        subtitle={t('teamPage.founders.subtitle')}
+                    />
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {founders.map((founder, index) => (
@@ -135,17 +95,19 @@ const Team = () => {
 
                                         {/* Info */}
                                         <div className="text-center mb-6">
-                                            <h3 className="text-2xl font-bold text-white mb-2">{founder.name}</h3>
+                                            <h3 className="text-2xl font-bold text-white mb-2">
+                                                {t(`teamPage.founders.items.${founder.id}.name`)}
+                                            </h3>
                                             <div className="text-cyan-400 font-medium mb-2 text-sm uppercase tracking-wide">
-                                                {founder.role}
+                                                {t(`teamPage.founders.items.${founder.id}.role`)}
                                             </div>
                                             <div className="mb-4">
                                                 <span className="text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-1 rounded-full">
-                                                    {founder.focus}
+                                                    {t(`teamPage.founders.items.${founder.id}.focus`)}
                                                 </span>
                                             </div>
                                             <p className="text-slate-400 text-sm leading-relaxed">
-                                                {founder.description}
+                                                {t(`teamPage.founders.items.${founder.id}.description`)}
                                             </p>
                                         </div>
 
@@ -182,7 +144,7 @@ const Team = () => {
                         viewport={{ once: true }}
                         className="text-center text-slate-500 mt-12 italic text-lg"
                     >
-                        "Together, we deliver efficient, end-to-end digital transformation."
+                        {t('teamPage.founders.quote')}
                     </motion.p>
                 </div>
             </section>
@@ -190,33 +152,41 @@ const Team = () => {
             {/* Team Members */}
             <section className="py-24 bg-slate-950">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader title="Our Expert Team" subtitle="Skilled professionals dedicated to your success" />
+                    <SectionHeader
+                        title={t('teamPage.teamMembers.title')}
+                        subtitle={t('teamPage.teamMembers.subtitle')}
+                    />
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {teamMembers.map((member, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -5 }}
-                                className="glass-effect p-6 rounded-xl group cursor-pointer"
-                            >
-                                <div className="flex items-center gap-4">
-                                    <div className="w-16 h-16 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 flex items-center justify-center text-xl font-bold text-white shrink-0 group-hover:scale-110 transition-transform">
-                                        {member.avatar}
+                        {teamMembers.map((member, index) => {
+                            // Helper to get initials for avatar
+                            const initials = member.name.split(' ').map((n: string) => n[0]).join('');
+
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    whileHover={{ y: -5 }}
+                                    className="glass-effect p-6 rounded-xl group cursor-pointer"
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-16 h-16 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 flex items-center justify-center text-xl font-bold text-white shrink-0 group-hover:scale-110 transition-transform">
+                                            {initials}
+                                        </div>
+                                        <div>
+                                            <h4 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
+                                                {member.name}
+                                            </h4>
+                                            <div className="text-cyan-400 text-sm mb-1">{member.role}</div>
+                                            <div className="text-xs text-slate-500">{member.expertise}</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
-                                            {member.name}
-                                        </h4>
-                                        <div className="text-cyan-400 text-sm mb-1">{member.role}</div>
-                                        <div className="text-xs text-slate-500">{member.expertise}</div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
@@ -225,16 +195,16 @@ const Team = () => {
             <section className="py-20 bg-linear-to-r from-cyan-500 to-blue-600">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                        Want to Join Our Team?
+                        {t('teamPage.cta.title')}
                     </h2>
                     <p className="text-lg text-slate-900/80 mb-8">
-                        We're always looking for talented individuals who are passionate about technology
+                        {t('teamPage.cta.subtitle')}
                     </p>
                     <a
                         href="/careers"
                         className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg transition-all transform hover:scale-105"
                     >
-                        View Open Positions
+                        {t('teamPage.cta.button')}
                     </a>
                 </div>
             </section>

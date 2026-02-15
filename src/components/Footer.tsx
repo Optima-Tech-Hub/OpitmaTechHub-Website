@@ -1,101 +1,87 @@
 import { Link } from 'react-router-dom';
-import { Mail, Linkedin, Globe, Twitter, Github, MapPin, Phone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Mail, Linkedin, Globe, Twitter, Github, MapPin, Phone } from 'lucide-react';
 import Logo from './Logo';
+import { SHARED } from '../constants/shared';
 
-const Footer = () => {
-    const { t } = useTranslation();
-    const currentYear = new Date().getFullYear();
+// ================================
+// CONTENT STRUCTURE
+// ================================
+// All content is structured as arrays of objects with translation keys
+// This structure is ready for database integration
 
-    // Company Information
-    const COMPANY_INFO = {
-        name: 'Optima',
-        nameAccent: 'Tech',
-        nameSuffix: 'Hub',
-        description: t('footer.company.description'),
-    };
-
+const FOOTER_STRUCTURE = {
     // Contact Information
-    const CONTACT_INFO = [
+    contactInfo: [
         {
+            id: 'email',
             icon: <Mail size={18} />,
-            text: 'contact@optimatech.hub',
-            link: 'mailto:contact@optimatech.hub',
+            value: SHARED.contact.email,
+            link: `mailto:${SHARED.contact.email}`,
             type: 'email',
         },
         {
+            id: 'phone',
             icon: <Phone size={18} />,
-            text: '+1 (555) 123-4567',
+            value: SHARED.contact.phone,
             link: null,
             type: 'phone',
         },
         {
+            id: 'address',
             icon: <MapPin size={18} />,
-            text: '123 Tech Street, Innovation City, IC 12345',
+            value: SHARED.contact.address,
             link: null,
             type: 'address',
         },
-    ];
+    ],
 
-    // CTA Section Content
-    const CTA_CONTENT = {
-        heading: t('footer.cta.heading'),
-        description: t('footer.cta.description'),
-        buttonText: t('footer.cta.button'),
-        buttonIcon: <Mail size={18} />,
-        buttonLink: '/contact',
-    };
-
-    // Footer Bottom Content
-    const FOOTER_BOTTOM_CONTENT = {
-        copyrightText: t('footer.legal.copyright'),
-        separator: ' • ',
-    };
-
-    // Footer Links Configuration
-    const FOOTER_LINKS = {
+    // Footer Links
+    links: {
         company: [
-            { name: t('footer.company.aboutUs'), path: '/about' },
-            { name: t('footer.company.team'), path: '/team' },
-            { name: t('footer.company.careers'), path: '/careers' },
-            { name: t('footer.company.contact'), path: '/contact' },
+            { nameKey: 'footer.company.aboutUs', path: SHARED.paths.about },
+            { nameKey: 'footer.company.team', path: SHARED.paths.team },
+            { nameKey: 'footer.company.careers', path: SHARED.paths.careers },
+            { nameKey: 'footer.company.contact', path: SHARED.paths.contact },
         ],
         services: [
-            { name: t('footer.services.platformDev'), path: '/services#platform' },
-            { name: t('footer.services.aiIntegration'), path: '/services#ai' },
-            { name: t('footer.services.cloudSolutions'), path: '/services#cloud' },
-            { name: t('footer.services.maintenance'), path: '/services#maintenance' },
+            { nameKey: 'footer.services.platformDev', path: `${SHARED.paths.services}${SHARED.serviceAnchors.platform}` },
+            { nameKey: 'footer.services.aiIntegration', path: `${SHARED.paths.services}${SHARED.serviceAnchors.ai}` },
+            { nameKey: 'footer.services.cloudSolutions', path: `${SHARED.paths.services}${SHARED.serviceAnchors.cloud}` },
+            { nameKey: 'footer.services.maintenance', path: `${SHARED.paths.services}${SHARED.serviceAnchors.maintenance}` },
         ],
         resources: [
-            { name: t('footer.resources.caseStudies'), path: '/case-studies' },
-            { name: t('footer.resources.blog'), path: '/blog' },
-            { name: t('footer.resources.solutions'), path: '/solutions' },
-            { name: t('footer.resources.faqs'), path: '/about#faq' },
+            { nameKey: 'footer.resources.caseStudies', path: SHARED.paths.caseStudies },
+            { nameKey: 'footer.resources.blog', path: SHARED.paths.blog },
+            { nameKey: 'footer.resources.solutions', path: SHARED.paths.solutions },
+            { nameKey: 'footer.resources.faqs', path: `${SHARED.paths.about}${SHARED.aboutAnchors.faq}` },
         ],
-    };
+    },
 
-    // Social Links Configuration
-    const SOCIAL_LINKS = [
-        { icon: <Linkedin size={20} />, href: '#', label: 'LinkedIn' },
-        { icon: <Twitter size={20} />, href: '#', label: 'Twitter' },
-        { icon: <Mail size={20} />, href: '#', label: 'Email' },
-        { icon: <Github size={20} />, href: '#', label: 'Github' },
-        { icon: <Globe size={20} />, href: '#', label: 'Website' },
-    ];
+    // Social Links
+    socialLinks: [
+        { icon: <Linkedin size={20} />, href: SHARED.social.linkedin, label: 'LinkedIn' },
+        { icon: <Twitter size={20} />, href: SHARED.social.twitter, label: 'Twitter' },
+        { icon: <Mail size={20} />, href: `mailto:${SHARED.contact.email}`, label: 'Email' },
+        { icon: <Github size={20} />, href: SHARED.social.github, label: 'Github' },
+        { icon: <Globe size={20} />, href: SHARED.social.website, label: 'Website' },
+    ],
 
-    // Legal Links Configuration
-    const LEGAL_LINKS = [
-        { name: t('footer.legal.privacy'), path: '/privacy' },
-        { name: t('footer.legal.terms'), path: '/terms' },
-        { name: t('footer.legal.cookies'), path: '/cookies' },
-    ];
+    // Legal Links
+    legalLinks: [
+        { nameKey: 'footer.legal.privacy', path: SHARED.paths.privacy },
+        { nameKey: 'footer.legal.terms', path: SHARED.paths.terms },
+        { nameKey: 'footer.legal.cookies', path: SHARED.paths.cookies },
+    ],
+};
 
-    // Section Headings
-    const SECTION_HEADINGS = {
-        company: t('footer.company.title'),
-        services: t('footer.services.title'),
-        resources: t('footer.resources.title'),
-    };
+// ================================
+// COMPONENT
+// ================================
+
+const Footer = () => {
+    const { t } = useTranslation();
+    const currentYear = new Date().getFullYear();
 
     return (
         <footer className="bg-slate-950 border-t border-slate-900 relative overflow-hidden">
@@ -113,26 +99,28 @@ const Footer = () => {
                                 <Logo className="w-full h-full" />
                             </div>
                             <span className="text-xl font-bold text-white">
-                                {COMPANY_INFO.name}<span className="text-cyan-400">{COMPANY_INFO.nameAccent}</span>{COMPANY_INFO.nameSuffix}
+                                {SHARED.company.name}
+                                <span className="text-cyan-400">{SHARED.company.nameAccent}</span>
+                                {SHARED.company.nameSuffix}
                             </span>
                         </div>
                         <p className="text-slate-400 mb-6 leading-relaxed">
-                            {COMPANY_INFO.description}
+                            {t('footer.company.description')}
                         </p>
 
                         {/* Contact Info */}
                         <div className="space-y-3 text-sm">
-                            {CONTACT_INFO.map((contact, index) => (
-                                <div key={index} className="flex items-start gap-3 text-slate-400">
+                            {FOOTER_STRUCTURE.contactInfo.map((contact) => (
+                                <div key={contact.id} className="flex items-start gap-3 text-slate-400">
                                     <span className="text-cyan-400 mt-0.5 shrink-0">
                                         {contact.icon}
                                     </span>
                                     {contact.link ? (
                                         <a href={contact.link} className="hover:text-cyan-400 transition-colors">
-                                            {contact.text}
+                                            {contact.value}
                                         </a>
                                     ) : (
-                                        <span>{contact.text}</span>
+                                        <span>{contact.value}</span>
                                     )}
                                 </div>
                             ))}
@@ -141,15 +129,17 @@ const Footer = () => {
 
                     {/* Company Links */}
                     <div>
-                        <h3 className="text-white font-bold mb-4 text-lg">{SECTION_HEADINGS.company}</h3>
+                        <h3 className="text-white font-bold mb-4 text-lg">
+                            {t('footer.company.title')}
+                        </h3>
                         <ul className="space-y-3">
-                            {FOOTER_LINKS.company.map((link) => (
-                                <li key={link.name}>
+                            {FOOTER_STRUCTURE.links.company.map((link, index) => (
+                                <li key={index}>
                                     <Link
                                         to={link.path}
                                         className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
                                     >
-                                        {link.name}
+                                        {t(link.nameKey)}
                                     </Link>
                                 </li>
                             ))}
@@ -158,15 +148,17 @@ const Footer = () => {
 
                     {/* Services Links */}
                     <div>
-                        <h3 className="text-white font-bold mb-4 text-lg">{SECTION_HEADINGS.services}</h3>
+                        <h3 className="text-white font-bold mb-4 text-lg">
+                            {t('footer.services.title')}
+                        </h3>
                         <ul className="space-y-3">
-                            {FOOTER_LINKS.services.map((link) => (
-                                <li key={link.name}>
+                            {FOOTER_STRUCTURE.links.services.map((link, index) => (
+                                <li key={index}>
                                     <Link
                                         to={link.path}
                                         className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
                                     >
-                                        {link.name}
+                                        {t(link.nameKey)}
                                     </Link>
                                 </li>
                             ))}
@@ -175,15 +167,17 @@ const Footer = () => {
 
                     {/* Resources Links */}
                     <div>
-                        <h3 className="text-white font-bold mb-4 text-lg">{SECTION_HEADINGS.resources}</h3>
+                        <h3 className="text-white font-bold mb-4 text-lg">
+                            {t('footer.resources.title')}
+                        </h3>
                         <ul className="space-y-3">
-                            {FOOTER_LINKS.resources.map((link) => (
-                                <li key={link.name}>
+                            {FOOTER_STRUCTURE.links.resources.map((link, index) => (
+                                <li key={index}>
                                     <Link
                                         to={link.path}
                                         className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
                                     >
-                                        {link.name}
+                                        {t(link.nameKey)}
                                     </Link>
                                 </li>
                             ))}
@@ -195,14 +189,18 @@ const Footer = () => {
                 <div className="border-t border-slate-900 pt-8 mb-8">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                         <div>
-                            <h4 className="text-white font-bold text-lg mb-2">{CTA_CONTENT.heading}</h4>
-                            <p className="text-slate-400 text-sm">{CTA_CONTENT.description}</p>
+                            <h4 className="text-white font-bold text-lg mb-2">
+                                {t('footer.cta.heading')}
+                            </h4>
+                            <p className="text-slate-400 text-sm">
+                                {t('footer.cta.description')}
+                            </p>
                         </div>
                         <Link
-                            to={CTA_CONTENT.buttonLink}
+                            to={SHARED.paths.contact}
                             className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 px-6 py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20 inline-flex items-center justify-center gap-2"
                         >
-                            {CTA_CONTENT.buttonIcon} {CTA_CONTENT.buttonText}
+                            <Mail size={18} /> {t('footer.cta.button')}
                         </Link>
                     </div>
                 </div>
@@ -210,7 +208,7 @@ const Footer = () => {
                 {/* Social Media Icons */}
                 <div className="border-t border-slate-900 pt-8">
                     <div className="flex items-center justify-center gap-4 mb-6">
-                        {SOCIAL_LINKS.map((social) => (
+                        {FOOTER_STRUCTURE.socialLinks.map((social) => (
                             <a
                                 key={social.label}
                                 href={social.href}
@@ -225,14 +223,16 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-slate-900 pt-6 text-center text-slate-600 text-sm">
-                    <p>© {currentYear} {COMPANY_INFO.name} {COMPANY_INFO.nameAccent} {COMPANY_INFO.nameSuffix}. {FOOTER_BOTTOM_CONTENT.copyrightText}</p>
+                    <p>
+                        © {currentYear} {SHARED.company.fullName}. {t('footer.legal.copyright')}
+                    </p>
                     <p className="mt-2 text-xs">
-                        {LEGAL_LINKS.map((link, index) => (
-                            <span key={link.name}>
+                        {FOOTER_STRUCTURE.legalLinks.map((link, index) => (
+                            <span key={link.nameKey}>
                                 <Link to={link.path} className="hover:text-cyan-400 transition-colors">
-                                    {link.name}
+                                    {t(link.nameKey)}
                                 </Link>
-                                {index < LEGAL_LINKS.length - 1 && FOOTER_BOTTOM_CONTENT.separator}
+                                {index < FOOTER_STRUCTURE.legalLinks.length - 1 && ' • '}
                             </span>
                         ))}
                     </p>

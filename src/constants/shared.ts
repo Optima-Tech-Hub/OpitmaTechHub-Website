@@ -26,7 +26,7 @@ export const SHARED = {
   social: {
     linkedin: "#",
     twitter: "#",
-    github: "#",
+    github: "https://github.com/Optima-Tech-Hub",
     website: "#",
   },
 
