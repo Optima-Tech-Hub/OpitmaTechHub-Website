@@ -20,7 +20,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/OpitmaTechHub-Website">
       <ScrollToTop />
       <div className="bg-slate-950 min-h-screen text-slate-200 font-sans selection:bg-cyan-500/30">
         <Navbar />
