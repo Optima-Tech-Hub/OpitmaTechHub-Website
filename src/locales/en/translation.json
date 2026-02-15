@@ -586,7 +586,8 @@
     "solutionsPage": {
         "hero": {
             "title": "Industry <span class=\"text-gradient\">Solutions</span>",
-            "subtitle": "Tailored digital platforms designed for your specific industry needs"
+            "subtitle": "Tailored digital platforms designed for your specific industry needs",
+            "badge": "Industry Solutions"
         },
         "items": {
             "enterprise": {
@@ -694,7 +695,8 @@
         },
         "labels": {
             "features": "Key Features:",
-            "benefits": "Benefits"
+            "benefits": "Benefits",
+            "reliability": "Reliability & Impact"
         },
         "cta": {
             "title": "Don't See Your Industry?",
@@ -994,6 +996,10 @@
             "title": "Our <span class=\"text-gradient\">Blog</span>",
             "subtitle": "Insights, tutorials, and thoughts on technology, AI, and digital transformation"
         },
+        "search": {
+            "label": "Search Articles",
+            "placeholder": "Search by title, author, or keyword..."
+        },
         "categories": {
             "all": "All",
             "ai": "AI & Machine Learning",
@@ -1066,6 +1072,30 @@
                 "date": "Jan 25, 2026",
                 "readTime": "7 min read",
                 "category": "Business Strategy"
+            },
+            "devopsPipelines": {
+                "title": "Mastering CI/CD Pipelines in 2026",
+                "excerpt": "A deep dive into modern automation workflows and how to eliminate bottlenecks in your deployment cycle.",
+                "author": "Hisham",
+                "date": "Feb 12, 2026",
+                "readTime": "11 min read",
+                "category": "Cloud & DevOps"
+            },
+            "aiEthics": {
+                "title": "The Ethics of Generative AI",
+                "excerpt": "Addressing the critical questions of bias, transparency, and responsibility in the age of autonomous systems.",
+                "author": "Amer",
+                "date": "Feb 14, 2026",
+                "readTime": "15 min read",
+                "category": "AI & Machine Learning"
+            },
+            "scalingSystems": {
+                "title": "Scaling Distributed Systems to Millions",
+                "excerpt": "Practical strategies for handling massive traffic spikes without compromising on latency or availability.",
+                "author": "Hisham",
+                "date": "Feb 15, 2026",
+                "readTime": "13 min read",
+                "category": "Architecture"
             }
         }
     },

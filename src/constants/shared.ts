@@ -35,6 +35,28 @@ export const SHARED = {
     effectiveDate: "February 15, 2026",
   },
 
+  // SEO & Metadata
+  metadata: {
+    title: "Optima Tech Hub | Leading Digital Transformation & AI Solutions",
+    description:
+      "Optima Tech Hub provides cutting-edge AI solutions, cloud infrastructure, and custom software development to empower businesses in the digital age.",
+    keywords:
+      "AI solutions, Digital Transformation, Cloud Infrastructure, Custom Software, Tech Hub, Innovation",
+    author: "Optima Tech Hub Team",
+    siteUrl: "https://optimatechhub.com", // Replace with actual URL
+    ogImage: "/og-image.png",
+    favicon: "/favicon.png",
+    twitterHandle: "@OptimaTechHub",
+  },
+
+  // UI Theme
+  theme: {
+    primary: "#0f172a", // Navy
+    secondary: "#06b6d4", // Cyan
+    accent: "#3b82f6", // Blue
+    fontSans: "Inter, system-ui, sans-serif",
+  },
+
   // Navigation Paths
   paths: {
     home: "/",
@@ -73,6 +95,8 @@ export const {
   contact,
   social,
   legal,
+  metadata,
+  theme,
   paths,
   serviceAnchors,
   aboutAnchors,

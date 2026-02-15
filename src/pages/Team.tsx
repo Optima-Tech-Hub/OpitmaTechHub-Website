@@ -81,20 +81,20 @@ const Team = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.2 }}
-                                className="group"
+                                className="group h-full"
                             >
-                                <div className="glass-effect rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all">
+                                <div className="glass-effect rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all h-full flex flex-col">
                                     {/* Color bar */}
                                     <div className={`h-2 bg-linear-to-r ${founder.color}`} />
 
                                     {/* Avatar */}
-                                    <div className="p-8">
-                                        <div className={`w-24 h-24 rounded-full bg-linear-to-r ${founder.color} mb-6 flex items-center justify-center text-3xl font-bold text-white shadow-lg group-hover:scale-110 transition-transform mx-auto`}>
+                                    <div className="p-8 flex-1 flex flex-col">
+                                        <div className={`w-24 h-24 rounded-full bg-linear-to-r ${founder.color} mb-6 flex items-center justify-center text-3xl font-bold text-white shadow-lg group-hover:scale-110 transition-transform mx-auto shrink-0`}>
                                             {founder.avatar}
                                         </div>
 
                                         {/* Info */}
-                                        <div className="text-center mb-6">
+                                        <div className="text-center mb-6 flex-1 flex flex-col">
                                             <h3 className="text-2xl font-bold text-white mb-2">
                                                 {t(`teamPage.founders.items.${founder.id}.name`)}
                                             </h3>
@@ -106,13 +106,13 @@ const Team = () => {
                                                     {t(`teamPage.founders.items.${founder.id}.focus`)}
                                                 </span>
                                             </div>
-                                            <p className="text-slate-400 text-sm leading-relaxed">
+                                            <p className="text-slate-400 text-sm leading-relaxed mb-4">
                                                 {t(`teamPage.founders.items.${founder.id}.description`)}
                                             </p>
                                         </div>
 
                                         {/* Social Links */}
-                                        <div className="flex items-center justify-center gap-4 pt-6 border-t border-slate-800">
+                                        <div className="flex items-center justify-center gap-4 pt-6 border-t border-slate-800 mt-auto">
                                             <a
                                                 href={founder.social.linkedin}
                                                 className="p-2 bg-slate-800 rounded-full hover:bg-cyan-500 hover:text-slate-900 transition-colors"

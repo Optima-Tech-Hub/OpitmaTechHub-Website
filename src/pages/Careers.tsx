@@ -120,66 +120,69 @@ const Careers = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="glass-effect rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all group"
+                                className="glass-effect rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all group flex flex-col h-full"
                             >
                                 <div className={`h-2 bg-linear-to-r ${position.color}`} />
 
-                                <div className="p-6">
-                                    {/* Header */}
-                                    <div className="flex items-start justify-between mb-4">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                                                {t(`careersPage.openPositions.items.${position.id}.title`)}
-                                            </h3>
-                                            <div className="text-cyan-400 text-sm font-medium">
-                                                {t(`careersPage.openPositions.items.${position.id}.department`)}
+                                <div className="p-6 flex flex-col flex-grow">
+                                    {/* Header Content */}
+                                    <div className="flex-grow">
+                                        {/* Header */}
+                                        <div className="flex items-start justify-between mb-4">
+                                            <div>
+                                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                                                    {t(`careersPage.openPositions.items.${position.id}.title`)}
+                                                </h3>
+                                                <div className="text-cyan-400 text-sm font-medium">
+                                                    {t(`careersPage.openPositions.items.${position.id}.department`)}
+                                                </div>
+                                            </div>
+                                            <div className="p-3 bg-slate-950 rounded-lg shrink-0">
+                                                <Briefcase className="text-cyan-400" size={24} />
                                             </div>
                                         </div>
-                                        <div className="p-3 bg-slate-950 rounded-lg">
-                                            <Briefcase className="text-cyan-400" size={24} />
+
+                                        {/* Info */}
+                                        <div className="flex flex-wrap gap-4 mb-4 text-sm text-slate-400">
+                                            <div className="flex items-center gap-2">
+                                                <MapPin size={16} />
+                                                {t(`careersPage.openPositions.items.${position.id}.location`)}
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <Clock size={16} />
+                                                {t(`careersPage.openPositions.items.${position.id}.type`)}
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <TrendingUp size={16} />
+                                                {t(`careersPage.openPositions.items.${position.id}.experience`)}
+                                            </div>
+                                        </div>
+
+                                        {/* Description */}
+                                        <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                                            {t(`careersPage.openPositions.items.${position.id}.description`)}
+                                        </p>
+
+                                        {/* Skills */}
+                                        <div className="mb-8">
+                                            <h4 className="text-white font-semibold mb-3 text-sm">
+                                                {t('careersPage.openPositions.labels.requiredSkills')}
+                                            </h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {position.skills.map((skill, idx) => (
+                                                    <span
+                                                        key={idx}
+                                                        className="px-3 py-1 bg-slate-900 text-slate-300 text-xs rounded-full border border-slate-800"
+                                                    >
+                                                        {skill}
+                                                    </span>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
 
-                                    {/* Info */}
-                                    <div className="flex flex-wrap gap-4 mb-4 text-sm text-slate-400">
-                                        <div className="flex items-center gap-2">
-                                            <MapPin size={16} />
-                                            {t(`careersPage.openPositions.items.${position.id}.location`)}
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <Clock size={16} />
-                                            {t(`careersPage.openPositions.items.${position.id}.type`)}
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <TrendingUp size={16} />
-                                            {t(`careersPage.openPositions.items.${position.id}.experience`)}
-                                        </div>
-                                    </div>
-
-                                    {/* Description */}
-                                    <p className="text-slate-400 text-sm mb-4 leading-relaxed">
-                                        {t(`careersPage.openPositions.items.${position.id}.description`)}
-                                    </p>
-
-                                    {/* Skills */}
-                                    <div className="mb-6">
-                                        <h4 className="text-white font-semibold mb-2 text-sm">
-                                            {t('careersPage.openPositions.labels.requiredSkills')}
-                                        </h4>
-                                        <div className="flex flex-wrap gap-2">
-                                            {position.skills.map((skill, idx) => (
-                                                <span
-                                                    key={idx}
-                                                    className="px-3 py-1 bg-slate-900 text-slate-300 text-xs rounded-full border border-slate-800"
-                                                >
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {/* Apply Button */}
-                                    <button className="w-full px-4 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold rounded-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                                    {/* Apply Button - Always at bottom */}
+                                    <button className="w-full mt-auto px-4 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold rounded-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2">
                                         {t('careersPage.openPositions.labels.applyNow')} <ArrowRight size={18} />
                                     </button>
                                 </div>
