@@ -22,6 +22,14 @@ import {
 
 import { useTranslation } from 'react-i18next';
 
+// Import assets
+import enterpriseImg from '../assets/enterprise_solution_tech_1771190922855.png';
+import educationImg from '../assets/education_solution_tech_1771190940237.png';
+import healthcareImg from '../assets/healthcare_solution_tech_1771190959453.png';
+import retailImg from '../assets/retail_solution_tech_v2_1771190981713.png';
+import financeImg from '../assets/finance_solution_tech_v2_1771190997106.png';
+import manufacturingImg from '../assets/manufacturing_solution_tech_v2_1771191019354.png';
+
 const Solutions = () => {
     const { t, i18n } = useTranslation();
     const isRtl = i18n.dir() === 'rtl';
@@ -41,7 +49,7 @@ const Solutions = () => {
             color: "cyan",
             gradient: "from-cyan-500 to-blue-600",
             visualIcon: <Globe size={48} />,
-            image: "/assets/enterprise_solution_tech_1771190922855.png"
+            image: enterpriseImg
         },
         {
             id: 'education',
@@ -49,7 +57,7 @@ const Solutions = () => {
             color: "blue",
             gradient: "from-blue-500 to-purple-600",
             visualIcon: <Target size={48} />,
-            image: "/assets/education_solution_tech_1771190940237.png"
+            image: educationImg
         },
         {
             id: 'healthcare',
@@ -57,7 +65,7 @@ const Solutions = () => {
             color: "purple",
             gradient: "from-purple-500 to-pink-600",
             visualIcon: <Activity size={48} />,
-            image: "/assets/healthcare_solution_tech_1771190959453.png"
+            image: healthcareImg
         },
         {
             id: 'retail',
@@ -65,7 +73,7 @@ const Solutions = () => {
             color: "emerald",
             gradient: "from-emerald-500 to-teal-600",
             visualIcon: <BarChart3 size={48} />,
-            image: "/assets/retail_solution_tech_v2_1771190981713.png"
+            image: retailImg
         },
         {
             id: 'finance',
@@ -73,7 +81,7 @@ const Solutions = () => {
             color: "orange",
             gradient: "from-orange-500 to-red-600",
             visualIcon: <Shield size={48} />,
-            image: "/assets/finance_solution_tech_v2_1771190997106.png"
+            image: financeImg
         },
         {
             id: 'manufacturing',
@@ -81,7 +89,7 @@ const Solutions = () => {
             color: "indigo",
             gradient: "from-indigo-500 to-purple-600",
             visualIcon: <Cpu size={48} />,
-            image: "/assets/manufacturing_solution_tech_v2_1771191019354.png"
+            image: manufacturingImg
         }
     ];
 

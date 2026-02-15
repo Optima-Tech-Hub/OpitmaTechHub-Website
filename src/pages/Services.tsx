@@ -26,6 +26,10 @@ import SectionHeader from '../components/SectionHeader';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+// Import assets
+import cloudArchImg from '../assets/cloud_architecture.png';
+import heroTechImg from '../assets/hero_tech_visualization_1771165748665.png';
+
 const Services = () => {
     const { t, i18n } = useTranslation();
     const isRtl = i18n.dir() === 'rtl';
@@ -247,7 +251,7 @@ const Services = () => {
                                             {/* Decorative Background Image Overlay */}
                                             <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000">
                                                 <img
-                                                    src="/assets/cloud_architecture.png"
+                                                    src={cloudArchImg}
                                                     alt=""
                                                     className="w-full h-full object-cover grayscale scale-150"
                                                 />
@@ -331,7 +335,7 @@ const Services = () => {
             <section className="relative py-32 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/assets/hero_tech_visualization_1771165748665.png"
+                        src={heroTechImg}
                         alt="Background"
                         className="w-full h-full object-cover opacity-20"
                     />

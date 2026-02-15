@@ -3,6 +3,9 @@ import { Target, Eye, Award, Search, Rocket, Zap, Heart } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import { useTranslation } from 'react-i18next';
 
+// Import assets
+import teamImg from '../assets/team_collaboration_1771165764359.png';
+
 const About = () => {
     const { t } = useTranslation();
 
@@ -91,7 +94,7 @@ const About = () => {
                             <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 rounded-[3rem] blur-2xl transform -rotate-2" />
                             <div className="relative rounded-[3rem] overflow-hidden border border-white/10 shadow-3xl">
                                 <img
-                                    src="/assets/team_collaboration_1771165764359.png"
+                                    src={teamImg}
                                     alt="Our Team in Action"
                                     className="w-full h-auto object-cover scale-110 hover:scale-100 transition-transform duration-1000"
                                 />

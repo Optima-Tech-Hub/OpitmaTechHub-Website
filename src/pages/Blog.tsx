@@ -4,6 +4,14 @@ import SectionHeader from '../components/SectionHeader';
 import { useTranslation } from 'react-i18next';
 import { useState, useMemo, useRef, useEffect } from 'react';
 
+// Import assets
+import heroTechImg from '../assets/hero_tech_visualization_1771165748665.png';
+import uxDesignImg from '../assets/blog_ux_design_1771189204183.png';
+import cloudInfraImg from '../assets/blog_cloud_infrastructure_1771189188387.png';
+import businessRoiImg from '../assets/blog_business_roi_strategy_1771189255444.png';
+import cybersecurityImg from '../assets/blog_cybersecurity_1771189219030.png';
+import distributedSystemsImg from '../assets/blog_distributed_systems_scaling_1771189232620.png';
+
 const Blog = () => {
     const { t } = useTranslation();
     const [activeCategory, setActiveCategory] = useState('all');
@@ -25,55 +33,55 @@ const Blog = () => {
     const blogPosts = [
         {
             id: 'futureAi',
-            image: "/assets/hero_tech_visualization_1771165748665.png",
+            image: heroTechImg,
             color: "from-cyan-500 to-blue-600",
             category: 'ai'
         },
         {
             id: 'aiEthics',
-            image: "/assets/blog_ux_design_1771189204183.png",
+            image: uxDesignImg,
             color: "from-blue-400 to-cyan-500",
             category: 'ai'
         },
         {
             id: 'cloudInfra',
-            image: "/assets/blog_cloud_infrastructure_1771189188387.png",
+            image: cloudInfraImg,
             color: "from-blue-500 to-purple-600",
             category: 'cloud'
         },
         {
             id: 'devopsPipelines',
-            image: "/assets/blog_business_roi_strategy_1771189255444.png",
+            image: businessRoiImg,
             color: "from-indigo-500 to-blue-500",
             category: 'cloud'
         },
         {
             id: 'uxDesign',
-            image: "/assets/blog_ux_design_1771189204183.png",
+            image: uxDesignImg,
             color: "from-purple-500 to-pink-600",
             category: 'design'
         },
         {
             id: 'security',
-            image: "/assets/blog_cybersecurity_1771189219030.png",
+            image: cybersecurityImg,
             color: "from-emerald-500 to-teal-600",
             category: 'security'
         },
         {
             id: 'scalingSystems',
-            image: "/assets/blog_distributed_systems_scaling_1771189232620.png",
+            image: distributedSystemsImg,
             color: "from-cyan-600 to-emerald-500",
             category: 'architecture'
         },
         {
             id: 'microservices',
-            image: "/assets/blog_ux_design_1771189204183.png",
+            image: uxDesignImg,
             color: "from-orange-500 to-red-600",
             category: 'architecture'
         },
         {
             id: 'roi',
-            image: "/assets/blog_business_roi_strategy_1771189255444.png",
+            image: businessRoiImg,
             color: "from-indigo-500 to-purple-600",
             category: 'business'
         }
@@ -215,7 +223,7 @@ const Blog = () => {
                             <div className="relative h-96 lg:h-full min-h-[400px] overflow-hidden">
                                 <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 to-blue-600/10 z-10" />
                                 <img
-                                    src={featuredPost.image || "/assets/hero_tech_visualization_1771165748665.png"}
+                                    src={featuredPost.image || heroTechImg}
                                     alt={t(`blogPage.posts.${featuredPost.id}.title`)}
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
@@ -289,7 +297,7 @@ const Blog = () => {
                                     <div className="relative h-56 bg-slate-900 overflow-hidden">
                                         <div className="absolute inset-0 bg-linear-to-t from-slate-950 to-transparent opacity-60 z-10" />
                                         <img
-                                            src={post.image || "/assets/hero_tech_visualization_1771165748665.png"}
+                                            src={post.image || heroTechImg}
                                             alt={t(`blogPage.posts.${post.id}.title`)}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         />
