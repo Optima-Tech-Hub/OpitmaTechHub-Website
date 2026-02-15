@@ -247,7 +247,7 @@ const Services = () => {
                                             {/* Decorative Background Image Overlay */}
                                             <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000">
                                                 <img
-                                                    src="src/assets/cloud_architecture.png"
+                                                    src="/assets/cloud_architecture.png"
                                                     alt=""
                                                     className="w-full h-full object-cover grayscale scale-150"
                                                 />
@@ -331,7 +331,7 @@ const Services = () => {
             <section className="relative py-32 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="src/assets/hero_tech_visualization_1771165748665.png"
+                        src="/assets/hero_tech_visualization_1771165748665.png"
                         alt="Background"
                         className="w-full h-full object-cover opacity-20"
                     />

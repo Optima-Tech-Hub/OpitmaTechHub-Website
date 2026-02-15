@@ -297,7 +297,7 @@ const Home = () => {
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-blue-700 to-purple-800" />
                     <img
-                        src="src/assets/hero_tech_visualization_1771165748665.png"
+                        src="/assets/hero_tech_visualization_1771165748665.png"
                         alt=""
                         className="w-full h-full object-cover opacity-20 mix-blend-overlay"
                     />
